@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Complete JWT Authentication with Django & React
 By: Stuart Leitch
 
@@ -24,3 +25,7 @@ Requirements:
 * Django Rest Framework
 * Python 3
 * React 16.8 and up
+=======
+# op.2
+Social Art Production Platform
+>>>>>>> c092e3c2fab69fe3fdba5b6ff9e4776ddd7bc9c9
