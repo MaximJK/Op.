@@ -1,10 +1,10 @@
 #root{
-    background-color:rebeccapurple;
-    color:white;
+    background-color:whitesmoke;
+    color:black;
 }
 
 .nav-link{
-    color:white;
+    color:black;
     border: 1px solid white;
     padding: 1em;
 }

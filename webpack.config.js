@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: "development",
+    watch: true,
     entry: ['babel-polyfill', path.resolve(__dirname, 'op/frontend/src/index.js')],
     output: {
         // options related to how webpack emits results
@@ -12,6 +13,7 @@ module.exports = {
         // 127.0.0.1/static/frontend/public/ where files are served from
         publicPath: "/static/frontend/public/",
         filename: 'main.js',  // the same one we import in index.html
+
     },
     module: {
         // configuration regarding modules

@@ -723,7 +723,7 @@ eval("\nvar global = __webpack_require__(/*! ./_global */ \"./node_modules/core-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var core = module.exports = { version: '2.6.11' };\nif (typeof __e == 'number') __e = core; // eslint-disable-line no-undef\n\n\n//# sourceURL=webpack:///./node_modules/core-js/modules/_core.js?");
+eval("var core = module.exports = { version: '2.6.9' };\nif (typeof __e == 'number') __e = core; // eslint-disable-line no-undef\n\n\n//# sourceURL=webpack:///./node_modules/core-js/modules/_core.js?");
 
 /***/ }),
 
