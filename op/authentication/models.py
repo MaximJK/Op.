@@ -4,4 +4,4 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     fav_color = models.CharField(blank=True, max_length=120)
-    projects = models.IntegerField(blank=True)
+    projects = models.IntegerField(blank=True, null=True)
