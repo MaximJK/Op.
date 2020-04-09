@@ -20,8 +20,8 @@ from . import api
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('authentication.urls')),
-    path('', include('frontend.urls')),
-    path('api/v1/', include(api.router.urls)),
+    # path(''÷, include('frontend.urls')),
+    path('api2/v1/', include(api.router.urls)),
     
 ]
 
