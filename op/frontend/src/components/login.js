@@ -15,21 +15,6 @@ class Login extends Component {
         this.setState({[event.target.name]: event.target.value});
     }
 
-    handleSubmitWThen(event){
-        event.preventDefault();
-        axiosInstance.post('/token/obtain/', {
-                username: this.state.username,
-                password: this.state.password
-            }).then(
-                result => {
-                    axiosInstance.defaults.headers['Authorization'] = "JWT " + result.data.access;
-                    localStorage.setItem('access_token', result.data.access);
-                    localStorage.setItem('refresh_token', result.data.refresh);
-                }
-        ).catch (error => {
-            throw error;
-        })
-    }
 
     async handleSubmit(event) {
         event.preventDefault();
