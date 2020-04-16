@@ -1,10 +1,10 @@
 import React, { Component} from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import Login from "./login";
-import Signup from "./signup";
+import Login from "./auth/login";
+import Signup from "./auth/signup";
 import Hello from "./hello";
 
-import axiosInstance from "../axiosApi";
+import axiosInstance from "../util/axiosApi";
 
 
 class App extends Component {
