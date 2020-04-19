@@ -19,7 +19,7 @@ class Signup extends Component{
         this.setState({[event.target.name]: event.target.value});
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault();
         debugger
         try {
@@ -27,14 +27,12 @@ class Signup extends Component{
         } catch (error) {
             throw error
         }
-        debugger
-        try{
-            this.props.loginUser(this.state)
-        } catch (error) {
-            throw error
+        // debugger
+    
+    // this.props.loginUser2(this.state)
+        // debugger
                 
         }
-    }
 
     render() {
         return (
