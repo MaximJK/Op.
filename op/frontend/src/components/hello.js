@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axiosInstance from "../util/axiosApi";
+import axiosInstance from '../actions/axiosApi';
 
 class Hello extends Component {
     constructor(props) {

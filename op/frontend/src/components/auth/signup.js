@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axiosInstance from "../../util/axiosApi";
+
 
 class Signup extends Component{
     constructor(props){
@@ -19,20 +19,20 @@ class Signup extends Component{
         this.setState({[event.target.name]: event.target.value});
     }
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
+        debugger
         try {
-            const response = await axiosInstance.post('/user/create/', {
-                username: this.state.username,
-                email: this.state.email,
-                password: this.state.password
-            });
-            return response;
+            this.props.signUpUser(this.state);
         } catch (error) {
-            console.log(error.stack);
-            this.setState({
-                errors:error.response.data
-            });
+            throw error
+        }
+        debugger
+        try{
+            this.props.loginUser(this.state)
+        } catch (error) {
+            throw error
+                
         }
     }
 

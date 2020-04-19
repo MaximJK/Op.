@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import axiosInstance from "../util/axiosApi";
-import loginUser from "../../actions/auth";
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +19,7 @@ class Login extends Component {
         event.preventDefault();
         debugger
         try {
-            loginUser(this.state);
+            this.props.loginUser(this.state);
         } catch (error) {
             throw error;
         }

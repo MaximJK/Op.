@@ -1,10 +1,11 @@
 import React, { Component} from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import Login from "./auth/login";
-import Signup from "./auth/signup";
+import login_container from "./auth/login_container";
+import signup_container from "./auth/signup_container";
 import Hello from "./hello";
 
-import axiosInstance from "../util/axiosApi";
+import axiosInstance from '../actions/axiosApi';
+import signup_contsiner from "./auth/signup_container";
 
 
 class App extends Component {
@@ -43,8 +44,8 @@ class App extends Component {
                     <h1>op</h1>
 
                     <Switch>
-                        <Route exact path={"/login/"} component={Login}/>
-                        <Route exact path={"/signup/"} component={Signup}/>
+                        <Route exact path={"/login/"} component={login_container}/>
+                        <Route exact path={"/signup/"} component={signup_container}/>
                         <Route exact path={"/hello/"} component={Hello}/>
                         <Route path={"/"} render={() => <div>Home again</div>}/>
                     </Switch>
