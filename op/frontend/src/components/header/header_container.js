@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
-import Login from './login';
-import {loginUser} from '../../actions/auth';
+import Header from './header';
+import {logoutUser} from '../../actions/auth';
 
 const mapStateToProps = (state) => {
+    debugger
     return {
-
+        isLoggedIn: state.auth.username !== undefined
     }
 }
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    loginUser: data => dispatch(loginUser(data))
-}
-}
+    logoutUser:() => dispatch(logoutUser())
+}}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Login);
+)(Header);

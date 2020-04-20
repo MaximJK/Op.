@@ -5,13 +5,12 @@ export default (state = {}, action) => {
 
     switch (action.type) {
         case LOGIN_USER:
-            debugger
+            
             return merge({}, {'username': action.payload});
         case SIGNUP_USER:
-            // return merge({}, {'username': action.payload});
         return {}
         case LOGOUT_USER:
-            return {_nullUser}
+            return {}
         default :
             return state;
         

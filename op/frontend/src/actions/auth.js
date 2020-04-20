@@ -2,7 +2,7 @@ import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER } from './types'
 import axiosInstance from "./axiosApi";
 
 export const loginUser = state => {
-  debugger
+  
   return (dispatch) => {
     axiosInstance.post('/token/obtain/', {
         username: state.username,
@@ -13,7 +13,7 @@ export const loginUser = state => {
         type: LOGIN_USER,
         payload: state.username
       })
-      debugger
+      
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
         localStorage.setItem('access_token', response.data.access);
         localStorage.setItem('refresh_token', response.data.refresh);
@@ -22,7 +22,7 @@ export const loginUser = state => {
 
 
   export const signUpUser = state => {
-    debugger
+    
     return (dispatch) => {
     axiosInstance.post('/user/create/', {
       username: state.username,
@@ -41,28 +41,22 @@ export const loginUser = state => {
     })
 }}
   
+export const logoutUser = () => {
   
-  export const loginUser2 = state => {
-    return (dispatch) => {
-      axiosInstance.post('/token/obtain/', {
-          username: state.username,
-          password: state.password
+  debugger
+  return (dispatch) => {
+     axiosInstance.post('/blacklist/', {
+    "refresh_token": localStorage.getItem("refresh_token")
+     })
+    .then(response => {
+      console.log(response);
+      dispatch({
+        type: LOGOUT_USER,
       })
-      .then(response => {
-        dispatch({
-          type: LOGIN_USER,
-          payload: state.username
-        })
-        debugger
-          axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
-          localStorage.setItem('access_token', response.data.access);
-          localStorage.setItem('refresh_token', response.data.refresh);
-        })
-      }}
+      debugger
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('refresh_token');
+      axiosInstance.defaults.headers['Authorization'] = null;
       
-// export const SignupAndLogin = (state) => {
-//    return (dispatch) => {
-//    signUpUser(state);
-//    loginUser(state);
-//    }
-// }
+      })
+    }}

@@ -21,16 +21,16 @@ class Signup extends Component{
 
     async handleSubmit(event) {
         event.preventDefault();
-        debugger
+        
         try {
             this.props.signUpUser(this.state);
         } catch (error) {
             throw error
         }
-        // debugger
+        // 
     
     // this.props.loginUser2(this.state)
-        // debugger
+        // 
                 
         }
 

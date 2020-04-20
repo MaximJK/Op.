@@ -17,7 +17,7 @@ class Login extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        debugger
+        
         try {
             this.props.loginUser(this.state);
         } catch (error) {
