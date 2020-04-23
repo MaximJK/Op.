@@ -5,7 +5,7 @@ import signup_container from "./auth/signup_container";
 import HeaderContainer from './header/header_container'
 import Splash from './splash/splash'
 import Hello from "./hello";
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from './util/route_util';
 
 class App extends Component {
 

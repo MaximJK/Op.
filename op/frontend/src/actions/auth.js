@@ -11,7 +11,7 @@ export const loginUser = state => {
     .then(response => {
       dispatch({
         type: LOGIN_USER,
-        payload: state.username
+        payload: response
       })
       
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
