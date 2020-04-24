@@ -24,10 +24,11 @@ class CustomUserSerializer(serializers.ModelSerializer):
     )
     username = serializers.CharField(required=True)
     password = serializers.CharField(min_length=8, write_only=True, required=True)
+    
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'username', 'password')
+        fields = ('id','email', 'username', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -36,5 +37,6 @@ class CustomUserSerializer(serializers.ModelSerializer):
         if password is not None:
             instance.set_password(password)
         instance.save()
+        
         return instance
 

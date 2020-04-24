@@ -4,11 +4,16 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import MyTokenObtainPairSerializer, CustomUserSerializer
-
+from rest_framework import viewsets
+from . import models
+from . import serializers
 
 class ObtainTokenPairWithColorView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
+class CustomUserViewset(viewsets.ModelViewSet):
+    queryset = models.CustomUser.objects.all()
+    serializer_class = serializers.CustomUserSerializer
 
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny,)

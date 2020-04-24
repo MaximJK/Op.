@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     switch (action.type) {
         case LOGIN_USER:
             
-            return merge({}, {'username': action.payload});
+            return merge({}, {'username': action.payload.data});
         case SIGNUP_USER:
         return {}
         case LOGOUT_USER:
