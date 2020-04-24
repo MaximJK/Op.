@@ -13,6 +13,9 @@ export const loginUser = state => {
         type: LOGIN_USER,
         payload: response
       })
+      .then(
+
+      )
       
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
         localStorage.setItem('access_token', response.data.access);
@@ -20,7 +23,27 @@ export const loginUser = state => {
       })
     }}
 
-
+export const fetchUser = state => {
+  
+  return (dispatch) => {
+    axiosInstance.get('/token/obtain/', {
+        username: state.username,
+        password: state.password
+    })
+    .then(response => {
+      dispatch({
+        type: LOGIN_USER,
+        payload: response
+      })
+      .then(
+        
+      )
+      
+        axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
+        localStorage.setItem('access_token', response.data.access);
+        localStorage.setItem('refresh_token', response.data.refresh);
+      })
+    }}
   export const signUpUser = state => {
     
     return (dispatch) => {
