@@ -1,4 +1,4 @@
-import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER } from './types'
+import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from './types'
 import axiosInstance from "./axiosApi";
 
 export const loginUser = state => {
@@ -8,11 +8,14 @@ export const loginUser = state => {
         username: state.username,
         password: state.password
     })
-    .then(response => {
-      dispatch({
-        type: LOGIN_USER,
-        payload: response
-      })
+    .then(()=>{
+          dispatch(fetchUser(state))
+            }).then(response => {
+              dispatch({
+                type: LOGIN_USER,
+                payload: response
+              })
+      
       
       
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
@@ -21,7 +24,18 @@ export const loginUser = state => {
       })
     }}
 
+  export const fetchUser = state => {
+    return (dispatch) => {
+      axiosInstance.get('/user', {
+        username: state.username
+    }).then(response => {
+      console.log(response)
+      dispatch({
+        type: FETCH_USER,
+        payload: response
 
+    })
+  })}}
   export const signUpUser = state => {
     
     return (dispatch) => {

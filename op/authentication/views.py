@@ -7,13 +7,19 @@ from .serializers import MyTokenObtainPairSerializer, CustomUserSerializer
 from rest_framework import viewsets
 from . import models
 from . import serializers
+from django_filters import rest_framework as filters
 
 class ObtainTokenPairWithColorView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
+
 class CustomUserViewset(viewsets.ModelViewSet):
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.CustomUserSerializer
+    # filterset_class = CustomUserFilter
+    filter_fields = ('id', 'username')
+
+
 
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
