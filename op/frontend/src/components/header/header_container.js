@@ -3,7 +3,7 @@ import Header from './header';
 import {logoutUser} from '../../actions/auth';
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
         isLoggedIn: state.auth.username !== undefined
     }

@@ -8,15 +8,11 @@ export const loginUser = state => {
         username: state.username,
         password: state.password
     })
-    .then(()=>{
-          dispatch(fetchUser(state))
-            }).then(response => {
-              dispatch({
-                type: LOGIN_USER,
-                payload: response
-              })
-      
-      
+    .then(response => {
+      dispatch({
+        type: LOGIN_USER,
+        payload: response
+      })
       
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
         localStorage.setItem('access_token', response.data.access);

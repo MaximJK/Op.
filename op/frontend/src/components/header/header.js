@@ -17,7 +17,7 @@ class Header extends Component {
     // }
 
     render() {
-        debugger
+        
         let logOutButton
         if (this.props.isLoggedIn === true) {
             logOutButton = (

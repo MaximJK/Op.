@@ -16,7 +16,6 @@ class ObtainTokenPairWithColorView(TokenObtainPairView):
 class CustomUserViewset(viewsets.ModelViewSet):
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.CustomUserSerializer
-    # filterset_class = CustomUserFilter
     filter_fields = ('id', 'username')
 
 
