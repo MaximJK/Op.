@@ -1,8 +1,8 @@
 import merge from 'lodash/merge';
 import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from '../actions/types';
-debugger
+
 export default (state = {}, action) => {
-    debugger
+    
     switch (action.type) {
         // case LOGIN_USER:
             

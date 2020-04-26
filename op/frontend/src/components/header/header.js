@@ -6,18 +6,8 @@ class Header extends Component {
         super(props)
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // handleSubmit(event) {
-    //     event.preventDefault();
-    //     
-    //     try {
-    //         this.props.logoutUser(this.state);
-    //     } catch (error) {
-    //         throw error;
-    //     }
-    // }
-
+  
     render() {
-        
         let logOutButton
         if (this.props.isLoggedIn === true) {
             logOutButton = (

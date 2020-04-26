@@ -3,7 +3,7 @@ import opsIndex from './ops_index';
 import {fetchOps} from '../../actions/ops';
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
         isLoggedIn: Boolean(state.auth.username)
     }

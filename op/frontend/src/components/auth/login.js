@@ -15,7 +15,7 @@ class Login extends Component {
     }
 
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
         
         try {

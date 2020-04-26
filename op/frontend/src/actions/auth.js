@@ -1,5 +1,6 @@
 import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from './types'
 import axiosInstance from "./axiosApi";
+import axios from 'axios'
 
 export const loginUser = state => {
   
@@ -9,26 +10,30 @@ export const loginUser = state => {
         password: state.password
     })
     .then(response => {
+      console.log('login')
+      console.log(response)
       dispatch({
         type: LOGIN_USER,
-        payload: response
+        payload: response.data
       })
-      
         axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
         localStorage.setItem('access_token', response.data.access);
         localStorage.setItem('refresh_token', response.data.refresh);
-      })
+      }).then(()=>{
+        dispatch(fetchUser(state))
+          })
     }}
 
   export const fetchUser = state => {
     return (dispatch) => {
-      axiosInstance.get('/user', {
+      axiosInstance.get('/user/', {
         username: state.username
     }).then(response => {
+      console.log('fetch')
       console.log(response)
       dispatch({
         type: FETCH_USER,
-        payload: response
+        payload: response.data
 
     })
   })}}
@@ -54,7 +59,7 @@ export const loginUser = state => {
   
 export const logoutUser = () => {
   
-  debugger
+  
   return (dispatch) => {
      axiosInstance.post('/blacklist/', {
     "refresh_token": localStorage.getItem("refresh_token")
@@ -64,7 +69,7 @@ export const logoutUser = () => {
       dispatch({
         type: LOGOUT_USER,
       })
-      debugger
+      
       localStorage.removeItem('access_token');
       localStorage.removeItem('refresh_token');
       axiosInstance.defaults.headers['Authorization'] = null;

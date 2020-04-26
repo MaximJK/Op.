@@ -3,9 +3,9 @@ import Header from './header';
 import {logoutUser} from '../../actions/auth';
 
 const mapStateToProps = (state) => {
-    
     return {
-        isLoggedIn: state.auth.username !== undefined
+        isLoggedIn: state.auth.username !== undefined,
+        state: state
     }
 }
 const mapDispatchToProps = (dispatch) => {

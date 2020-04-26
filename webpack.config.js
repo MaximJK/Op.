@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
     mode: "development",
-    watch: true,
     entry: ['babel-polyfill', path.resolve(__dirname, 'op/frontend/src/index.js')],
     output: {
         // options related to how webpack emits results
@@ -15,6 +14,7 @@ module.exports = {
         filename: 'main.js',  // the same one we import in index.html
 
     },
+    
     module: {
         // configuration regarding modules
         rules: [
