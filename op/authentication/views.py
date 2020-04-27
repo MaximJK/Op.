@@ -13,12 +13,12 @@ class ObtainTokenPairWithColorView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-class CustomUserViewset(viewsets.ModelViewSet):
-    queryset = models.CustomUser.objects.all()
-    serializer_class = serializers.CustomUserSerializer
-    filter_fields = ('id', 'username')
-
-
+class CustomUserGet(APIView):
+    
+     def get(self, request, format='json'):
+        user = models.CustomUser.objects.filter(username=self.username)
+        serializer_class = serializers.CustomUserSerializer
+        return Response(json, status=status.HTTP_201_FETCHED)
 
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -32,7 +32,7 @@ class CustomUserCreate(APIView):
                 json = serializer.data
                 return Response(json, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    
 
 class HelloWorldView(APIView):
 
