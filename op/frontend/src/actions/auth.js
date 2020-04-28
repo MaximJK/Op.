@@ -2,44 +2,36 @@ import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from './types'
 import axiosInstance from "./axiosApi";
 import axios from 'axios'
 
-export const loginUser = state => {
-  
-  return (dispatch) => {
+export const loginUser = state => dispatch => (
     axiosInstance.post('/token/obtain/', {
         username: state.username,
         password: state.password
     })
     .then(response => {
-      console.log('login')
-      console.log(response)
-      dispatch({
+      axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
+      localStorage.setItem('access_token', response.data.access);
+      localStorage.setItem('refresh_token', response.data.refresh);
+      return dispatch({
         type: LOGIN_USER,
         payload: response.data
       })
-        axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
-        localStorage.setItem('access_token', response.data.access);
-        localStorage.setItem('refresh_token', response.data.refresh);
       }).then(()=>{
-        dispatch(fetchUser(state))
+        console.log(state)
+        return dispatch(fetchUser(state))
+        
           })
-    }}
+)
 
-  export const fetchUser = state => {
-    return (dispatch) => {
-      axiosInstance.get('/user/', {
-        username: state.username
+  export const fetchUser = state => dispatch => (
+      axiosInstance.get(`/user/?username=${state.username}`, {
+        
     }).then(response => {
-      console.log('fetch')
-      console.log(response)
-      dispatch({
+      return dispatch({
         type: FETCH_USER,
         payload: response.data
-
     })
-  })}}
-  export const signUpUser = state => {
-    
-    return (dispatch) => {
+  }))
+  export const signUpUser = state => dispatch => (
     axiosInstance.post('/user/create/', {
       username: state.username,
       email: state.email,
@@ -55,12 +47,9 @@ export const loginUser = state => {
     .then(()=>{
   dispatch(loginUser(state))
     })
-}}
+  )
   
-export const logoutUser = () => {
-  
-  
-  return (dispatch) => {
+export const logoutUser = () => dispatch => (
      axiosInstance.post('/blacklist/', {
     "refresh_token": localStorage.getItem("refresh_token")
      })
@@ -74,5 +63,4 @@ export const logoutUser = () => {
       localStorage.removeItem('refresh_token');
       axiosInstance.defaults.headers['Authorization'] = null;
       
-      })
-    }}
+      }))

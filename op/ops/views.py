@@ -9,9 +9,9 @@ class OpViewset(viewsets.ModelViewSet):
     
     queryset = models.Op.objects.all()
     serializer_class = serializers.OpsSerializer
-
+    filterset_fields = {'authors', 'title'}
 class DraftViewset(viewsets.ModelViewSet):
     
     queryset = models.Draft.objects.all()
     serializer_class = serializers.DraftSerializer
-
+    filterset_fields = {'ops'}

@@ -1,11 +1,15 @@
-import React    from "./node_modules/react";
-
+import React from "react";
 
 class Ops extends React.Component {
   render() {
     return (
       <div>
-        some ops
+        <div>
+        your Ops
+        </div>
+        <div>
+          make new op
+        </div>
       </div>
     )
   };

@@ -13,15 +13,17 @@ class ObtainTokenPairWithColorView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-class CustomUserGet(APIView):
-    
-     def get(self, request, format='json'):
-        user = models.CustomUser.objects.filter(username=self.username)
-        serializer_class = serializers.CustomUserSerializer
-        return Response(json, status=status.HTTP_201_FETCHED)
-
-class CustomUserCreate(APIView):
+class CustomUser(viewsets.ModelViewSet):
+    queryset = models.CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
     permission_classes = (permissions.AllowAny,)
+    authentication_classes = ()
+    filterset_fields = {'username'}
+    
+        
+    
+class CustomUserCreate(APIView):
+    permission_classes = (permissions.AllowAny)
     authentication_classes = ()
 
     def post(self, request, format='json'):
