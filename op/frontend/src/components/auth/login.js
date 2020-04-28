@@ -19,7 +19,7 @@ class Login extends Component {
         event.preventDefault();
         
         try {
-            this.props.loginUser(this.state).then(() =>  this.props.history.push("/ops/"));
+            this.props.loginUser(this.state).then(() => this.props.history.push("/ops/"));
         } catch (error) {
             throw error;
         }

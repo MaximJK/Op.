@@ -39,13 +39,12 @@ export const loginUser = state => dispatch => (
     })
     .then(response => {
       console.log(response);
-    dispatch({
+    return dispatch({
       type: SIGNUP_USER,
       payload: response
     })
-  })
-    .then(()=>{
-  dispatch(loginUser(state))
+  }).then(()=>{
+  return dispatch(loginUser(state))
     })
   )
   
