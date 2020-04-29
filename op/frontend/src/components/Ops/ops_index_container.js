@@ -5,7 +5,8 @@ import {fetchOps} from '../../actions/ops';
 const mapStateToProps = (state) => {
     debugger
     return {
-        id: state.auth.user.id
+        id: state.auth.user.id,
+        ops: state.ops
     }
 }
 const mapDispatchToProps = (dispatch) => {

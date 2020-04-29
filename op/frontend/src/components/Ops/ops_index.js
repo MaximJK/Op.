@@ -7,7 +7,19 @@ class OpsIndex extends React.Component {
     this.props.fetchOps(this.props.id)
 }
   render() {
-
+    let ops
+    debugger
+    if (this.props.ops.ops) {
+      ops = this.props.ops.ops.map(op => {
+      return(
+        <li>
+          {op.title}
+        </li>
+      )
+    })}
+    else {
+      ops = <li></li>
+    }
 
     return (
       <div>
@@ -15,7 +27,9 @@ class OpsIndex extends React.Component {
         your Ops
         </div>
         <div>
-          make new op
+          <ul>
+          {ops}
+          </ul>
         </div>
       </div>
     )

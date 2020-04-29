@@ -7,7 +7,7 @@ export default (state = {}, action) => {
     switch (action.type) {
         
         case FETCH_OPS:
-            return merge({}, {'ops': action.payload[0]});
+            return merge({}, {'ops': action.payload});
         default :
             return state;
 
