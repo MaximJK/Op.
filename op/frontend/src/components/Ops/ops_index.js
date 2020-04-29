@@ -1,7 +1,14 @@
 import React from "react";
 
-class Ops extends React.Component {
+class OpsIndex extends React.Component {
+
+  componentDidMount() {
+    debugger
+    this.props.fetchOps(this.props.id)
+}
   render() {
+
+
     return (
       <div>
         <div>
@@ -15,4 +22,4 @@ class Ops extends React.Component {
   };
 }
 
-export default Ops;
+export default OpsIndex;

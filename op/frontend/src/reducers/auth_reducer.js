@@ -13,7 +13,7 @@ export default (state = {}, action) => {
             return {}
         case FETCH_USER:
             console.log(action.payload)
-            return merge({}, {'username': action.payload[0]});
+            return merge({}, {'user': action.payload[0]});
         default :
             return state;
         

@@ -15,7 +15,8 @@ export const loginUser = state => dispatch => (
         type: LOGIN_USER,
         payload: response.data
       })
-      }).then(()=>{
+    })
+      .then(()=>{
         console.log(state)
         return dispatch(fetchUser(state))
         

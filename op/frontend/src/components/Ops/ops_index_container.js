@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import opsIndex from './ops_index';
+import OpsIndex from './ops_index';
 import {fetchOps} from '../../actions/ops';
 
 const mapStateToProps = (state) => {
-    
+    debugger
     return {
-        isLoggedIn: Boolean(state.auth.username)
+        id: state.auth.user.id
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(opsIndex);
+)(OpsIndex);
