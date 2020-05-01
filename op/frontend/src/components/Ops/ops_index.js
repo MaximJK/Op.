@@ -12,14 +12,15 @@ class OpsIndex extends React.Component {
     if (this.props.ops.ops) {
       ops = this.props.ops.ops.map(op => {
       return(
-        <li>
+        <li key={op.id}>
+          
           {op.title}
         </li>
       )
     })}
     else {
       ops = <li></li>
-    }
+    }s
 
     return (
       <div>
