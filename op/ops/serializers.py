@@ -1,12 +1,14 @@
 from rest_framework import serializers
 from . import models
 
-class OpsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Op
-        fields = ('authors', 'title', 'is_public')
 
 class DraftSerializer(serializers.ModelSerializer):
     class  Meta:
         model = models.Draft
-        fields = ('ops', 'body', 'medium', 'version_num', 'is_final')
+        fields = ('id', 'ops', 'body', 'medium', 'version_num', 'is_final')
+class OpsSerializer(serializers.ModelSerializer):
+    draft = DraftSerializer(many=True)
+    class Meta:
+        
+        model = models.Op
+        fields = ('id', 'authors', 'title', 'is_public','draft')
