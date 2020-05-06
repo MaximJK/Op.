@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import OpsIndex from './ops_index';
 import {fetchOps} from '../../actions/ops';
+import OpsView from './ops_view';
 
 const mapStateToProps = (state) => {
     

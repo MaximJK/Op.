@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
+import OpsView from './ops_view'
 class OpsIndex extends React.Component {
 
   componentDidMount() {
@@ -12,10 +13,16 @@ class OpsIndex extends React.Component {
     if (this.props.ops.ops) {
       ops = this.props.ops.ops.map(op => {
       return(
-        <li key={op.id}>
-          
+        <div>
+        <div key={op.id}>
           {op.title}
-        </li>
+        </div>
+        <OpsView
+        key={op.id}
+        title={op.title}
+        drafts={op.draft}
+        />
+        </div>
       )
     })}
     else {
@@ -23,6 +30,7 @@ class OpsIndex extends React.Component {
     }
 
     return (
+      
       <div>
         <div>
         your Ops

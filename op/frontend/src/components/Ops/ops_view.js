@@ -1,13 +1,23 @@
 import React from "react";
 
-const OpsView = ({Ops}) => {
-     
+const OpsView = (op) => {
+    let title = op.title
+    let  drafts = op.drafts.map(draft => {
+        if (draft.body.length )
+        return(
+            <li>
+                {draft.body}
+            </li>
+        )
+    })
+
     return (
 
     <div>
-        <div>
-            
-        </div>
+        <ul>
+       {title}
+        {drafts}
+        </ul>
     </div>
 
     )
