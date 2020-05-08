@@ -12,3 +12,19 @@ export const fetchOps = id => dispatch => (
         })
     })
     )
+
+export const CreateOp = data => dispatch => (
+    axiosInstance.post('/ops/', {
+        authors: data.id,
+        medium: data.medium,
+        title: data.title,
+        description: data.description,
+        is_public: 'False'
+    })
+    .then(response => {
+        return dispatch({
+        type: CREATE_OPS,
+        payload: response.data
+        })
+    })
+    )

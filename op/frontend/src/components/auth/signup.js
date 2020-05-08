@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link, withRouter } from 'react-router-dom';
 
 class Signup extends Component{
     constructor(props){
@@ -58,4 +58,4 @@ class Signup extends Component{
     }
 }
 
-export default Signup;
+export default withRouter(Signup);
