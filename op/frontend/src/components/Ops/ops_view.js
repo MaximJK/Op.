@@ -5,7 +5,7 @@ const OpsView = (op) => {
     let  drafts = op.drafts.map(draft => {
         if (draft.body.length )
         return(
-            <li>
+            <li key={draft.body}>
                 {draft.body}
             </li>
         )
@@ -18,6 +18,7 @@ const OpsView = (op) => {
        {title}
         {drafts}
         </ul>
+        
     </div>
 
     )

@@ -13,7 +13,7 @@ export const fetchOps = id => dispatch => (
     })
     )
 
-export const CreateOp = data => dispatch => (
+export const createOp = data => dispatch => (
     axiosInstance.post('/ops/', {
         authors: data.id,
         medium: data.medium,

@@ -1,8 +1,8 @@
 
 import { connect } from 'react-redux';
-import React from 'react';
-import ReviewForm from './review_form'
-import { createOp, updateOp } from '../../actions/ops'
+
+import OpForm from './ops_form';
+import { createOp, updateOp } from '../../actions/ops';
 
 
 const msp = (state, ownProps) => {
@@ -32,4 +32,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp,mdp)(ReviewForm)
+export default connect(msp,mdp)(OpForm)
