@@ -23,8 +23,21 @@ export const createOp = data => dispatch => (
     })
     .then(response => {
         return dispatch({
-        type: CREATE_OPS,
+        type: CREATE_OP,
         payload: response.data
         })
     })
     )
+
+    export const deleteOp = data => dispatch => (
+        axiosInstance.post('/ops/', {
+            id: data
+            
+        })
+        .then(response => {
+            return dispatch({
+            type: DELETE_OP,
+            payload: response.data
+            })
+        })
+        )

@@ -27,7 +27,6 @@ class OpsIndex extends React.Component {
         description: op.description,
         title: op.title,
         type: 'edit'
-
       }
     )
   }
@@ -61,6 +60,7 @@ class OpsIndex extends React.Component {
         drafts={op.draft}
         />
         <button onClick={() => {{this.editOp(op)}}}>edit op</button>
+        <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button>
         </div>
       );
     })}

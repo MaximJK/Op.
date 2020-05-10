@@ -13,7 +13,7 @@ class OpsForm extends React.Component {
             this.setState({ [field]: e.target.value });
         };
     };
-    
+
     handleSubmit(e) {
         e.preventDefault();
         let action = this.defineAction()
@@ -31,6 +31,7 @@ class OpsForm extends React.Component {
                    <div>
                         <input
                             className=""
+                            value={this.state.title}
                             type='text'
                             onChange={this.update('title')}
                          />
@@ -41,7 +42,7 @@ class OpsForm extends React.Component {
                     <br></br>
                         <input
                             className=""
-                            placeholder=""
+                            value={this.state.medium}
                             type='text'
                             onChange={this.update('medium')}
                          />
@@ -52,7 +53,7 @@ class OpsForm extends React.Component {
                     <br></br>
                         <textarea
                             className=""
-                            placeholder="describe your Op here"
+                            value={this.state.description}
                             rows="12"
                             onChange={this.update('medium')}
                          />
