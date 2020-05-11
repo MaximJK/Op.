@@ -1,9 +1,9 @@
 import merge from 'lodash/merge';
 import { FETCH_OPS, DELETE_OP, CREATE_OP } from '../actions/types';
 
-debugger
+
 export default (state = {}, action) => {
-    debugger
+    
     switch (action.type) {
         
         case FETCH_OPS:
@@ -20,9 +20,9 @@ export default (state = {}, action) => {
 
         case DELETE_OP:
             let newState = merge({}, state);
-            delete newState[action.payload];
-            return newState;
-
+            
+            return {'ops': newState.ops.filter(op =>
+                op.id !== action.payload)};
         default :
             return state;
 

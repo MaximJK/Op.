@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import OpsIndex from './ops_index';
-import {fetchOps,deleteOps  } from '../../actions/ops';
+import {fetchOps,deleteOp  } from '../../actions/ops';
 
 
 const mapStateToProps = (state) => {
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
     
     return {
     fetchOps:(id) => dispatch(fetchOps(id)),
-    deleteOps:(id) => dispatch(deleteOps(id))
+    deleteOp:(id) => dispatch(deleteOp(id))
 }}
 
 export default connect(

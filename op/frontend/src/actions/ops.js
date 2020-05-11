@@ -30,14 +30,12 @@ export const createOp = data => dispatch => (
     )
 
     export const deleteOp = data => dispatch => (
-        axiosInstance.delete('/ops/', {
-            id: data
-            
+        axiosInstance.delete(`/ops/${data}/`, {
         })
         .then(response => {
             return dispatch({
             type: DELETE_OP,
-            payload: response.data
+            payload: data
             })
         })
         )
