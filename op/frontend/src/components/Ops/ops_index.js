@@ -6,6 +6,7 @@ class OpsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: '',
       modal: false,
       authors: '',
       medium: '',
@@ -22,6 +23,7 @@ class OpsIndex extends React.Component {
   editOp(op) {
     this.setState(
       {modal: true,
+        id: op.id,
         authors: op.authors,
         medium: op.medium,
         description: op.description,
@@ -73,6 +75,7 @@ class OpsIndex extends React.Component {
     } else {
     opModal = <OpsForm
     key={this.state.title}
+    id={this.state.id}
     authors= {this.state.authors}
     medium= {this.state.medium}
     description= {this.state.description}

@@ -6,4 +6,4 @@ export const FETCH_USER ='FETCH_USER';
 export const FETCH_OPS = 'FETCH_OPS';
 export const CREATE_OP = 'CREATE_OP';
 export const DELETE_OP = 'DELETE_OP';
-
+export const PATCH_OP = 'PATCH_OP';

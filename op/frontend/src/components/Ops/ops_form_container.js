@@ -8,6 +8,7 @@ import { createOp, updateOp } from '../../actions/ops';
 const msp = (state, ownProps) => {
      
     const op =  {
+        id: ownProps.id,
         authors: state.auth.user.id,
         medium: ownProps.medium,
         description: ownProps.description,

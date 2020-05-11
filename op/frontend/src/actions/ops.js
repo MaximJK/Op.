@@ -1,4 +1,4 @@
-import { FETCH_OPS, CREATE_OP, DELETE_OP, } from './types'
+import { FETCH_OPS, CREATE_OP, DELETE_OP, PATCH_OP } from './types'
 import axiosInstance from "./axiosApi";
 
 export const fetchOps = id => dispatch => (
@@ -41,8 +41,8 @@ export const createOp = data => dispatch => (
         )
 
     export const updateOp = data => dispatch => (
-        axiosInstance.patch('/ops/', {
-        authors: data.id,
+        axiosInstance.patch(`/ops/${data.id}/`, {
+        authors: data.authors,
         medium: data.medium,
         title: data.title,
         description: data.description,
