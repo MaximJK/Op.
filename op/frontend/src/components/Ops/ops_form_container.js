@@ -32,4 +32,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp,mdp)(OpForm)
+export default connect(msp,mdp)(OpForm);

@@ -7,7 +7,13 @@ class OpsForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.op;
     }
-    
+    defineAction(){
+        if (this.props.type.type === 'create') {
+            return this.props.createOp
+        } else {
+            return this.props.updateOp
+        }
+    }
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value });
@@ -55,7 +61,7 @@ class OpsForm extends React.Component {
                             className=""
                             value={this.state.description}
                             rows="12"
-                            onChange={this.update('medium')}
+                            onChange={this.update('description')}
                          />
                     </div>
 

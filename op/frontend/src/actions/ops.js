@@ -30,13 +30,30 @@ export const createOp = data => dispatch => (
     )
 
     export const deleteOp = data => dispatch => (
-        axiosInstance.post('/ops/', {
+        axiosInstance.delete('/ops/', {
             id: data
             
         })
         .then(response => {
             return dispatch({
             type: DELETE_OP,
+            payload: response.data
+            })
+        })
+        )
+
+    export const updateOp = data => dispatch => (
+        axiosInstance.patch('/ops/', {
+        authors: data.id,
+        medium: data.medium,
+        title: data.title,
+        description: data.description,
+        is_public: 'False'
+            
+        })
+        .then(response => {
+            return dispatch({
+            type: PATCH_OP,
             payload: response.data
             })
         })
