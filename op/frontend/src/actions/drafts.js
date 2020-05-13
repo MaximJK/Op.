@@ -25,7 +25,7 @@ export const deleteDraft = id => dispatch => (
     .then(response => {
         return dispatch({
         type: DELETE_DRAFT,
-        payload: response.data
+        payload: id
         })
     })
     )
@@ -40,7 +40,7 @@ export const updateOp = data => dispatch => (
     })
     .then(response => {
         return dispatch({
-        type: PATCH_OP,
+        type: PATCH_DRAFT,
         payload: response.data
         })
     })

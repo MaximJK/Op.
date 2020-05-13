@@ -49,8 +49,8 @@ class OpsIndex extends React.Component {
     debugger
     let ops;
     
-    if (this.props.ops.ops) {
-      ops = this.props.ops.ops.map(op => {
+    if (this.props.ops && Object.keys(this.props.ops).length !== 0) {
+      ops = Object.values(this.props.ops).map(op => {
       return(
         <div>
         <div key={op.id}>
