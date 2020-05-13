@@ -18,6 +18,7 @@ class Draft(models.Model):
         related_name="draft",
         null=True, blank=True, default=None
     )
-    body = models.TextField()
+    body = models.TextField(default='-')
+    notes = models.TextField(default='-')
     version_num = models.IntegerField()
     is_final = models.BooleanField(null=False, default=False)
