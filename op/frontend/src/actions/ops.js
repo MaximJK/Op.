@@ -29,30 +29,30 @@ export const createOp = data => dispatch => (
     })
     )
 
-    export const deleteOp = data => dispatch => (
-        axiosInstance.delete(`/ops/${data}/`, {
+export const deleteOp = data => dispatch => (
+    axiosInstance.delete(`/ops/${data}/`, {
+    })
+    .then(response => {
+        return dispatch({
+        type: DELETE_OP,
+        payload: data
         })
-        .then(response => {
-            return dispatch({
-            type: DELETE_OP,
-            payload: data
-            })
-        })
-        )
+    })
+    )
 
-    export const updateOp = data => dispatch => (
-        axiosInstance.patch(`/ops/${data.id}/`, {
-        authors: data.authors,
-        medium: data.medium,
-        title: data.title,
-        description: data.description,
-        is_public: 'False'
-            
+export const updateOp = data => dispatch => (
+    axiosInstance.patch(`/ops/${data.id}/`, {
+    authors: data.authors,
+    medium: data.medium,
+    title: data.title,
+    description: data.description,
+    is_public: 'False'
+        
+    })
+    .then(response => {
+        return dispatch({
+        type: PATCH_OP,
+        payload: response.data
         })
-        .then(response => {
-            return dispatch({
-            type: PATCH_OP,
-            payload: response.data
-            })
-        })
-        )
+    })
+    )

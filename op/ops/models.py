@@ -13,7 +13,7 @@ class Op(models.Model):
     is_public = models.BooleanField(null=False, default=False)
 
 class Draft(models.Model):
-    ops = models.ForeignKey(
+    op = models.ForeignKey(
         'Op', on_delete=models.CASCADE,
         related_name="draft",
         null=True, blank=True, default=None

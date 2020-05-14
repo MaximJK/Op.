@@ -1,28 +1,25 @@
 import React from "react";
+import { Link, withRouter } from 'react-router-dom';
+import { render } from "react-dom";
 
-const OpsView = (op) => {
-    let title = op.title
-    let  drafts = op.drafts.map(draft => {
-        if (draft.body.length )
-        return(
-            <li key={draft.body}>
-                {draft.body}
-            </li>
-        )
-    })
-
-    return (
-
+class OpsView extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        
+      };
+    }
+    
+    render() {
+        return (
+    
     <div>
-        <ul>
-       {title}
-        {drafts}
-        </ul>
         
     </div>
-
-    )
-
+    
+    
+        )
+    };
 }
 
 export default OpsView;

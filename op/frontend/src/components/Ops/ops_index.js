@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import OpsView from './ops_view'
+import OpsLi from './ops_li'
 import OpsForm from './ops_form_container'
 class OpsIndex extends React.Component {
   constructor(props) {
@@ -54,11 +54,10 @@ class OpsIndex extends React.Component {
       ops = Object.values(this.props.ops).map(op => {
       return(
         <div>
-        <div key={op.title}>
-          {op.title}
-        </div>
-        <OpsView
+       
+        <OpsLi
         key={op.id}
+        id={op.id}
         title={op.title}
         drafts={op.draft}
         />
@@ -91,7 +90,7 @@ class OpsIndex extends React.Component {
         </div>
       <button onClick={() => {this.createOp()}}>create op</button>
         <div>
-        your Ops
+        your Ops:
         </div>
         <div>
           <ul>
