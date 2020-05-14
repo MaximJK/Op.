@@ -3,31 +3,33 @@ import { FETCH_OPS, DELETE_OP, CREATE_OP, PATCH_OP } from '../actions/types';
 
 debugger
 export default (state = {}, action) => {
-    debugger
+    const arrayToObject = (array) =>
+        array.reduce((obj, item) => {
+        obj[item.id] = item
+        return obj
+   }, {})
+
     switch (action.type) {
         
         case FETCH_OPS:
-            return merge({}, action.payload);
+            return  arrayToObject(action.payload);
         case CREATE_OP:
-            let newState2 = merge({}, state);
-            newState2.ops.push(action.payload);
+            let newState2 = merge({}, state)
+            newState2[action.payload.id] = action.payload;
             return newState2;
+            
         case PATCH_OP:
             let newState3 = merge({}, state);
+            let x ={...newState3, [action.payload.id]: action.payload}
             debugger
-            return Object.values(newState3).map(op => 
-                {if (op.id === action.payload.id){
-                    return Object.assign(op, action.payload)
-                } else {
-                    return op
-                }
-                    
-            })
+            return x
+            
+            
         case DELETE_OP:
             let newState = merge({}, state);
-            
-            return newState.ops.filter(op =>
-                op.id !== action.payload);
+            debugger
+            delete newState[action.payload]
+           return newState
         default :
             return state;
     }}

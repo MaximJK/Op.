@@ -8,7 +8,7 @@ class OpsIndex extends React.Component {
     this.state = {
       id: '',
       modal: false,
-      authors: '',
+      authors: this.props.id,
       medium: '',
       description: '',
       title: '',
@@ -20,6 +20,9 @@ class OpsIndex extends React.Component {
     
     this.props.fetchOps(this.props.id)
 }
+  componentDidUpdate() {
+    
+  }
   editOp(op) {
     this.setState(
       {modal: true,
@@ -53,11 +56,11 @@ class OpsIndex extends React.Component {
       ops = Object.values(this.props.ops).map(op => {
       return(
         <div>
-        <div key={op.id}>
+        <div key={op.title}>
           {op.title}
         </div>
         <OpsView
-        // key={op.id}
+        key={op.id}
         title={op.title}
         drafts={op.draft}
         />
@@ -70,18 +73,17 @@ class OpsIndex extends React.Component {
       ops = <li></li>
     };
     let opModal;
-    if (this.state.modal === false) {
-    opModal = <div></div>
+    if (this.state.modal !== false) {
+      opModal = <OpsForm
+      id={this.state.id}
+      authors= {this.state.authors}
+      medium= {this.state.medium}
+      description= {this.state.description}
+      title= {this.state.title}
+      type= {this.state.type}
+      />
     } else {
-    opModal = <OpsForm
-    key={this.state.title}
-    id={this.state.id}
-    authors= {this.state.authors}
-    medium= {this.state.medium}
-    description= {this.state.description}
-    title= {this.state.title}
-    type= {this.state.type}
-    />
+    opModal = <div></div>
     };
     return (
       
