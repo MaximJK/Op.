@@ -20,9 +20,7 @@ class OpsIndex extends React.Component {
     
     this.props.fetchOps(this.props.id)
 }
-  componentDidUpdate() {
-    
-  }
+ 
   editOp(op) {
     this.setState(
       {modal: true,
@@ -72,24 +70,24 @@ class OpsIndex extends React.Component {
     else {
       ops = <li></li>
     };
-    let opModal;
-    if (this.state.modal !== false) {
-      opModal = <OpsForm
-      id={this.state.id}
-      authors= {this.state.authors}
-      medium= {this.state.medium}
-      description= {this.state.description}
-      title= {this.state.title}
-      type= {this.state.type}
-      />
-    } else {
-    opModal = <div></div>
-    };
+    
+  
+     
+    
+    
     return (
       
       <div>
         <div id='OpsModal'>
-        {opModal}
+        {this.state.modal && <OpsForm
+          key={this.state.title}
+          id={this.state.id}
+          authors= {this.state.authors}
+          medium= {this.state.medium}
+          description= {this.state.description}
+          title= {this.state.title}
+          type= {this.state.type}
+          />}
         </div>
       <button onClick={() => {this.createOp()}}>create op</button>
         <div>
