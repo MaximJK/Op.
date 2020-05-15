@@ -1,4 +1,4 @@
-![Op. Logo](https://i.ibb.co/qFGRSbX/Op-Logo-V1-WEB-copy.jpg)
+![Op. Logo](https://i.ibb.co/dDczJg7/Op-Logo-V1-web-smaller.jpg)
 
 
 Op. is a social art production platform that facilitates the developement, sharing and criticism of artwork by groups of friends. Share drafts of your project with friends, get their feedback and when its finished, publish your work to the rest of the site. 
