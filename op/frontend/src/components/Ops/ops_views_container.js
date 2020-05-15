@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         id: state.auth.user.id,
-        op: state.ops[ownProps.match.params.opsid]
+        op: state.ops[Number(ownProps.match.params.opsid)]
     }
 }
 const mapDispatchToProps = (dispatch) => {

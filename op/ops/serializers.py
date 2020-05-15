@@ -5,7 +5,7 @@ from . import models
 class DraftSerializer(serializers.ModelSerializer):
     class  Meta:
         model = models.Draft
-        fields = ('id', 'ops', 'body', 'version_num', 'is_final', )
+        fields = ('id', 'op', 'body', 'version_num', 'is_final', )
 class OpsSerializer(serializers.ModelSerializer):
     draft = DraftSerializer(many=True, read_only=True, required=None, allow_null=True, )
     class Meta:

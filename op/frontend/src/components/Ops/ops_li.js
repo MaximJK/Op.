@@ -18,18 +18,19 @@ const OpsLi = (op) => {
     })
 
     return (
-    <Link to={`ops/${op.id}`}>
-    <div>
+        <div>
+        <Link to={`${op.id}`}>
         {title}
+        </Link>
         <ul>
        
         {drafts}
         </ul>
         
     </div>
-    </Link>
+    
     )
 
 }
 
-export default OpsLi;
+export default withRouter(OpsLi);
