@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-op is a social art production platform
-=======
-op is a social art production platform
->>>>>>> 626275c1773281a75838640b44ef6df50cf53421
+![Op. Logo](https://ibb.co/4gyjqB9)
+<!-- Format: ![Alt Text](url) -->
+
+Op. is a social art production platform that facilitates the developement, sharing and criticism of artwork by groups of friends. Share drafts of your project with friends, get their feedback and when its finished, publish your work to the rest of the site. Projected features include: version control, mixed media support, direct messaging, groups, personalizable pages with public facing projects.
+
+Op. is currently built on a Django/PostgreSQL backend, employing Django Rest Rramework/SimpleJWT for the API and authentication respectivly. The frontend is built with React/Redux.
