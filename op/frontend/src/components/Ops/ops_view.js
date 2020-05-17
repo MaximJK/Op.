@@ -13,7 +13,8 @@ class OpsView extends React.Component {
         description: this.props.op.description,
         title: this.props.op.title,
         type: this.props.op.type,
-        drafts: this.props.op.draft
+        drafts: this.props.op.draft,
+
             }
       };
     }
@@ -24,14 +25,15 @@ class OpsView extends React.Component {
         let drafts
         if (this.props.op.draft) {
         drafts = this.state.op.drafts.map(draft => {
-            
-            
-            return(
+
+            return (
+                <Link to={`/ops/${this.state.ops}/drafts/${draft.id}/`}>
                 <li key={draft}>
                     {draft.body}
                     <br></br>
                     'draft number:'{draft.version_num}
                 </li>
+                </Link>
             )
         })} else {
             return (
@@ -50,6 +52,9 @@ class OpsView extends React.Component {
             <ul>
                 {drafts}
             </ul>
+        <Link to={`/ops/`}>
+        "Back to Index"
+        </Link>
         </div>
     
     

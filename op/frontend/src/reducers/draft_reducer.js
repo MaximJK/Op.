@@ -14,7 +14,7 @@ export default (state = {}, action) => {
             return newState2;
         case PATCH_DRAFT:
             let newState3 = merge({}, state);
-            return newState3.ops.map(op => 
+            return newState3map(op => 
                 {if (op.id === action.payload.id){
                     return Object.assign(op, action.payload)
                 } else {

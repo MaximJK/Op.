@@ -64,7 +64,7 @@ class OpsForm extends React.Component {
                             onChange={this.update('description')}
                          />
                     </div>
-
+                    
                     <input className="submit"  type="submit" value={this.props.type.type}/>
                 </form>
             </div>

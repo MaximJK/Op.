@@ -15,6 +15,8 @@ module.exports = {
 
     },
     
+    
+    
     module: {
         // configuration regarding modules
         rules: [
@@ -31,4 +33,16 @@ module.exports = {
             }
         ],
     },
+    // module: {
+    //     rules: [
+    //       {
+    //         test: /\.css$/,
+    //         use: [
+    //           'style-loader',
+    //           'css-loader'
+    //         ]
+    //       }
+    //     ]
+    //   },
+      
 };
