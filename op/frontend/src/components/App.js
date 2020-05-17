@@ -19,6 +19,7 @@ class App extends Component {
             <div className="site">
                 
                     <header>
+                    <img src={"/static/frontend/Op.LogoV2small.jpg"}></img>
                         <Route path={"/"} component={HeaderContainer}/>
                     </header>
                 

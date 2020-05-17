@@ -13,6 +13,7 @@ class OpsView extends React.Component {
         description: this.props.op.description,
         title: this.props.op.title,
         type: this.props.op.type,
+        drafts: this.props.op.draft
             }
       };
     }
@@ -20,10 +21,35 @@ class OpsView extends React.Component {
     
     render() {
         debugger
-
+        let drafts
+        if (this.props.op.draft) {
+        drafts = this.state.op.drafts.map(draft => {
+            
+            
+            return(
+                <li key={draft}>
+                    {draft.body}
+                    <br></br>
+                    'draft number:'{draft.version_num}
+                </li>
+            )
+        })} else {
+            return (
+                <li></li>
+            )
+        }
         return (
         <div>
-            {this.props.op.id}
+            {this.state.op.title}
+            <div>
+            {this.props.op.medium}
+            {this.props.op.description}
+            {this.props.op.medium}
+            'number of drafts': {drafts.length}
+            </div>
+            <ul>
+                {drafts}
+            </ul>
         </div>
     
     

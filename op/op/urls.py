@@ -24,6 +24,6 @@ urlpatterns = [
     # path('api/', include('ops.urls'))
     path('', include('frontend.urls')),
     
-]
+] 
 
 
