@@ -27,7 +27,7 @@ class OpsView extends React.Component {
         drafts = this.state.op.drafts.map(draft => {
 
             return (
-                <Link to={`/ops/${this.state.ops}/drafts/${draft.id}/`}>
+                <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>
                 <li key={draft}>
                     {draft.body}
                     <br></br>

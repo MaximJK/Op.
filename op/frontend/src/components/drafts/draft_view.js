@@ -8,11 +8,17 @@ class DraftView extends React.Component {
       };
 
     render() {
-
+        debugger
         return (
         <div>
-        'x'
+        {this.props.draft.body}
+        <br/>
+
+        <Link to={'/op/id/'} >
+           'back to Op.'
+        </Link>
         </div>
+
     
     
         )

@@ -11,3 +11,4 @@ class OpsSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Op
         fields = ('id', 'authors', 'title', 'medium', 'description', 'is_public','draft')
+    

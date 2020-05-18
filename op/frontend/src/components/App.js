@@ -5,7 +5,7 @@ import signup_container from "./auth/signup_container";
 import HeaderContainer from './header/header_container'
 import OpsContainer from './ops/ops_index_container'
 import OpsView from './ops/ops_views_container'
-import DraftView from './drafts/draft_view'
+import DraftView from './drafts/draft_view_container'
 import Splash from './splash/splash'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -23,7 +23,7 @@ class App extends Component {
                     <img id="headerLogo" src={"/static/frontend/Op.LogoV2copy.jpg"}></img>
                         <Route path={"/"} component={HeaderContainer}/>
                     </header>
-                
+                    
                 <main>
 
                     <Switch>
