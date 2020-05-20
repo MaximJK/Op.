@@ -9,11 +9,9 @@ const msp = (state, ownProps) => {
      
     const op =  {
         id: ownProps.id,
-        authors: state.auth.user.id,
-        medium: ownProps.medium,
-        description: ownProps.description,
-        title: ownProps.title
-
+        user_id: state.auth.user.id,
+        body: ownProps.body,
+        notes: ownProps.notes,
     }
     const type = {
         type: ownProps.type
@@ -27,8 +25,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        createOp: op => dispatch(createOp(op)),
-        updateOp: op => dispatch(updateOp(op))
+        createDraft: draft => dispatch(createDraft(draft)),
+        updateDraft: draft => dispatch(updateDraft(draft))
 
     }
 }
