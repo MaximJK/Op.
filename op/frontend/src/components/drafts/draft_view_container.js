@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    // fetchOps:(id) => dispatch(fetchOps(id))
+        editDraft:(draft) => dispatch(fetchDraft(draft)),
+        deleteDraft:(id) => dispatch(deleteDraft(id))
 }}
 
 export default connect(

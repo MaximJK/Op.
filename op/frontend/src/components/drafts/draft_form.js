@@ -5,13 +5,13 @@ class OpsForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = this.props.op;
+        this.state = this.props.draft;
     }
     defineAction(){
         if (this.props.type.type === 'create') {
-            return this.props.createOp
+            return this.props.createDraft
         } else {
-            return this.props.updateOp
+            return this.props.updateDraft
         }
     }
     update(field) {
@@ -30,38 +30,30 @@ class OpsForm extends React.Component {
         debugger
         return (
             <div >
+                <div id='DraftModal'>
+                {this.state.modal && <DraftForm/>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     
-                    <label>title</label>
+                    <label>Body:</label>
                     <br></br>
                    <div>
                         <input
                             className=""
-                            value={this.state.title}
+                            value={this.state.body}
                             type='text'
-                            onChange={this.update('title')}
+                            onChange={this.update('body')}
                          />
                     </div>
 
                     <div>
-                    <label>medium</label>
+                    <label>Notes:</label>
                     <br></br>
                         <input
                             className=""
-                            value={this.state.medium}
+                            value={this.state.notes}
                             type='text'
-                            onChange={this.update('medium')}
-                         />
-                    </div>
-
-                    <div>
-                    <label>description</label>
-                    <br></br>
-                        <textarea
-                            className=""
-                            value={this.state.description}
-                            rows="12"
-                            onChange={this.update('description')}
+                            onChange={this.update('notes')}
                          />
                     </div>
                     

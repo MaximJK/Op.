@@ -7,7 +7,7 @@ import { createOp, updateOp } from '../../actions/ops';
 
 const msp = (state, ownProps) => {
      
-    const op =  {
+    const draft =  {
         id: ownProps.id,
         user_id: state.auth.user.id,
         body: ownProps.body,
@@ -18,16 +18,16 @@ const msp = (state, ownProps) => {
 }
 
     return {
-        op,
+        draft,
         type
 }
 }
 
 const mdp = dispatch => {
     return {
-        createDraft: draft => dispatch(createDraft(draft)),
-        updateDraft: draft => dispatch(updateDraft(draft))
-
+        // createDraft: draft => dispatch(createDraft(draft)),
+        // updateDraft: draft => dispatch(updateDraft(draft))
+        
     }
 }
 
