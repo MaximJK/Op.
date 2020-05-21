@@ -6,6 +6,8 @@ import HeaderContainer from './header/header_container'
 import OpsContainer from './ops/ops_index_container'
 import OpsView from './ops/ops_views_container'
 import DraftView from './drafts/draft_view_container'
+import DraftForm from './drafts/draft_form_container'
+
 import Splash from './splash/splash'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -33,6 +35,7 @@ class App extends Component {
                         <ProtectedRoute exact path={'/ops/'} component={OpsContainer}/>
                         <ProtectedRoute exact path='/ops/:opsid' component={OpsView} /> 
                         <ProtectedRoute exact path={'/ops/:opsid/drafts/:draftid'} component={DraftView}/>
+                        <ProtectedRoute exact path={'/ops/:opsid/drafts/form'} component={DraftForm}/>
                     </Switch>
                 </main>
             </div>

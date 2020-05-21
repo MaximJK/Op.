@@ -22,10 +22,8 @@ const OpsLi = (op) => {
         <Link to={`${op.id}`}>
         {title}
         </Link>
-        <ul>
-       
-        {drafts}
-        </ul>
+        number of drafts:{drafts.length}
+        
         
     </div>
     
