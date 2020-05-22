@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
 
-class OpsForm extends React.Component {
+class DraftForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,10 +29,7 @@ class OpsForm extends React.Component {
     render () {
         debugger
         return (
-            <div >
-                <div id='DraftModal'>
-                {this.state.modal && <DraftForm/>
-                </div>
+            <div>
                 <form onSubmit={this.handleSubmit}>
                     
                     <label>Body:</label>
@@ -63,4 +60,4 @@ class OpsForm extends React.Component {
         );
     }
 }
-export default withRouter(OpsForm);
+export default withRouter(DraftForm);

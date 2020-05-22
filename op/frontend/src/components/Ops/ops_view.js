@@ -52,15 +52,16 @@ class OpsView extends React.Component {
             <div >
                 <Link to={{ 
                     pathname: `/ops/${this.props.op.id}/drafts/form`, 
-                        state: {
+                        state: {'draft': {
                             op: this.props.op.id,
                             body: '', 
                             notes: '',
                             //do version logic below
                             version_num: '',
                             is_public: ''
-                    } 
-                    }}>new draft</Link>
+                    },
+                     'type': 'create'
+                    }}}>new draft</Link>
     </div>
             <ul>
                 {drafts}

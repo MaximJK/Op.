@@ -20,14 +20,16 @@ class DraftView extends React.Component {
         <div>
             <div >
                 <Link to={{ 
-                    pathname: `'/ops/:opsid/drafts/form`, 
-                        state: {
-                            op: x,
-                            body: x, 
-                            notes: x,
+                    pathname: `/ops/${this.props.id}/drafts/form`, 
+                        state: {'draft': {
+                            op: this.props.id,
+                            body: this.props.draft.body, 
+                            notes: this.props.draft.notes,
+                            // version_num logic
                             version_num: x,
-                            is_public:x
-                    } 
+                            is_public: false
+                    },
+                    'type': 'edit' }
                     }}>edit draft</Link>
             </div>
         <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete op</button>

@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 
-import OpForm from './ops_form';
+import DraftForm from './draft_form';
 import { createOp, updateOp } from '../../actions/ops';
 
 
@@ -31,4 +31,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp,mdp)(OpForm);
+export default connect(msp,mdp)(DraftForm);
