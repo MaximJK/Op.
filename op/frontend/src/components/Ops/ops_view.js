@@ -21,7 +21,7 @@ class OpsView extends React.Component {
 
     
     render() {
-        debugger
+        
         let drafts
         if (this.props.op.draft) {
         drafts = this.state.op.drafts.map(draft => {
@@ -49,6 +49,19 @@ class OpsView extends React.Component {
             {this.props.op.medium}
             'number of drafts': {drafts.length}
             </div>
+            <div >
+                <Link to={{ 
+                    pathname: `/ops/${this.props.op.id}/drafts/form`, 
+                        state: {
+                            op: this.props.op.id,
+                            body: '', 
+                            notes: '',
+                            //do version logic below
+                            version_num: '',
+                            is_public: ''
+                    } 
+                    }}>new draft</Link>
+    </div>
             <ul>
                 {drafts}
             </ul>

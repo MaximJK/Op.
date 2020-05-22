@@ -13,25 +13,28 @@ class DraftView extends React.Component {
                 medium: this.props.op.medium,
         }
       };
-
+    }
     render() {
         debugger
         return (
         <div>
-            <div id='DraftModal'>
-            {this.state.modal && <DraftForm
-            key={this.state.id}
-            id={this.state.id}
-            body={this.state.body}
-            notes={this.state.notes}
-            
-            
-            />}
+            <div >
+                <Link to={{ 
+                    pathname: `'/ops/:opsid/drafts/form`, 
+                        state: {
+                            op: x,
+                            body: x, 
+                            notes: x,
+                            version_num: x,
+                            is_public:x
+                    } 
+                    }}>edit draft</Link>
             </div>
+        <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete op</button>
+            
         {this.props.draft.body}
         {this.props.draft.notes}
-        <button onClick={() => {{this.props.editDraft(draft)}}}>edit op</button>
-        <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete op</button>
+        
         <br/>
 
         <Link to={'/op/id/'} >
@@ -43,5 +46,5 @@ class DraftView extends React.Component {
     
         )
     };
-}
+};
 export default withRouter(DraftView);
