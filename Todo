@@ -1,0 +1,12 @@
+Next Step:
+-finish and test draft logic
+-style what I have
+-persist session on refresh
+
+Future Slices:
+-social:
+    -user profile & public page
+    -friends authorization
+    -public feed
+-multimedia support:
+
