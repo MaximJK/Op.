@@ -57,8 +57,8 @@ class OpsView extends React.Component {
                             body: '', 
                             notes: '',
                             //do version logic below
-                            version_num: '',
-                            is_public: ''
+                            version_num: drafts.length + 1,
+                            is_public: false
                     },
                      'type': 'create'
                     }}}>new draft</Link>

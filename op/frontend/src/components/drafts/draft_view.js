@@ -26,7 +26,7 @@ class DraftView extends React.Component {
                             body: this.props.draft.body, 
                             notes: this.props.draft.notes,
                             // version_num logic
-                            version_num: "",
+                            version_num: this.props.draft.version_num,
                             is_public: false
                     },
                     'type': 'edit' }
