@@ -5,8 +5,10 @@ class DraftForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = this.props.draft;
+        this.state = this.props.draft
     }
+
+   
     defineAction(){
         if (this.props.type.type === 'create') {
             return this.props.createDraft

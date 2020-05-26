@@ -16,11 +16,11 @@ class Header extends Component {
         }
         return (
             <div>
-                <Link to={'/login'}>
+                <Link to={'/login/'}>
                     login
                 </Link>
 
-                <Link to={'/signup'}>
+                <Link to={'/signup/'}>
                     sign up
                 </Link>
              {logOutButton}

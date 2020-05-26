@@ -8,9 +8,9 @@ class DraftView extends React.Component {
         super(props);
         this.state = {
             draft: {
-                id: this.props.op.id,
-                authors: this.props.op.authors,
-                medium: this.props.op.medium,
+                id: this.props.draft.id,
+                authors: this.props.draft.body,
+                medium: this.props.draft.notes,
         }
       };
     }
@@ -20,13 +20,13 @@ class DraftView extends React.Component {
         <div>
             <div >
                 <Link to={{ 
-                    pathname: `/ops/${this.props.id}/drafts/form`, 
+                    pathname: `/ops/${this.props.id}/draft/edit/`, 
                         state: {'draft': {
                             op: this.props.id,
                             body: this.props.draft.body, 
                             notes: this.props.draft.notes,
                             // version_num logic
-                            version_num: x,
+                            version_num: "",
                             is_public: false
                     },
                     'type': 'edit' }
@@ -39,8 +39,8 @@ class DraftView extends React.Component {
         
         <br/>
 
-        <Link to={'/op/id/'} >
-           'back to Op.'
+        <Link to={`/ops/${this.props.id}/`} >
+           `back to Op.'
         </Link>
         </div>
 

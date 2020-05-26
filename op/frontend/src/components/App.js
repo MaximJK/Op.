@@ -33,9 +33,10 @@ class App extends Component {
                         <Route exact path={"/login/"} component={login_container}/>
                         <Route exact path={"/signup/"} component={signup_container}/>
                         <ProtectedRoute exact path={'/ops/'} component={OpsContainer}/>
-                        <ProtectedRoute exact path='/ops/:opsid' component={OpsView} /> 
-                        <ProtectedRoute exact path={'/ops/:opsid/drafts/:draftid'} component={DraftView}/>
-                        <ProtectedRoute exact path={'/ops/:opsid/drafts/form'} component={DraftForm}/>
+                        <ProtectedRoute exact path='/ops/:opsid/' component={OpsView} /> 
+                        <ProtectedRoute exact path={'/ops/:opsid/drafts/:draftid/'} component={DraftView}/>
+                        <ProtectedRoute exact path={'/ops/:opsid/draft/create/'} component={DraftForm}/>
+                        <ProtectedRoute exact path={'/ops/:opsid/draft/edit/'} component={DraftForm}/>
                     </Switch>
                 </main>
             </div>

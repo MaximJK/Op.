@@ -12,7 +12,8 @@ export default (state = {}, action) => {
     switch (action.type) {
         
         case FETCH_OPS:
-            return  arrayToObject(action.payload);
+            let ops = action.payload
+            return  arrayToObject(ops);
         case CREATE_OP:
             let newState2 = merge({}, state)
             newState2[action.payload.id] = action.payload;

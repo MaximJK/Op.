@@ -21,7 +21,7 @@ class OpsView extends React.Component {
 
     
     render() {
-        
+        debugger
         let drafts
         if (this.props.op.draft) {
         drafts = this.state.op.drafts.map(draft => {
@@ -51,7 +51,7 @@ class OpsView extends React.Component {
             </div>
             <div >
                 <Link to={{ 
-                    pathname: `/ops/${this.props.op.id}/drafts/form`, 
+                    pathname: `/ops/${this.props.op.id}/draft/create/`, 
                         state: {'draft': {
                             op: this.props.op.id,
                             body: '', 
