@@ -2,7 +2,7 @@ import { FETCH_DRAFT, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
 import axiosInstance from "./axiosApi";
 
 export const createDraft = data => dispatch => (
-    axiosInstance.get('/draft/', {
+    axiosInstance.post('/draft/', {
         op: data.op,
         body: data.body,
         notes: data.notes,
@@ -19,7 +19,7 @@ export const createDraft = data => dispatch => (
     )
 
 export const deleteDraft = id => dispatch => (
-    axiosInstance.get(`/draft/${id}/`, {
+    axiosInstance.delete(`/draft/${id}/`, {
         
 
     })
