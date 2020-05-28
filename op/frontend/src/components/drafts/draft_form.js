@@ -10,7 +10,7 @@ class DraftForm extends React.Component {
 
    
     defineAction(){
-        if (this.props.type.type === 'create') {
+        if (this.props.type === 'create') {
             return this.props.createDraft
         } else {
             return this.props.updateDraft

@@ -22,4 +22,4 @@ class DraftViewset(viewsets.ModelViewSet):
     
     queryset = models.Draft.objects.all()
     serializer_class = serializers.DraftSerializer
-    filterset_fields = {'ops'}
+    filterset_fields = {'op'}

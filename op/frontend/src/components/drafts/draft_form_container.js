@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DraftForm from './draft_form';
-import { createOp, updateOp } from '../../actions/ops';
+import { createDraft, updateDraft } from '../../actions/drafts';
 
 
 const msp = (state, ownProps) => {

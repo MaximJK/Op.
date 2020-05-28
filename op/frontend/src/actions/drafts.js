@@ -1,12 +1,13 @@
 import { FETCH_DRAFT, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
+import axiosInstance from "./axiosApi";
 
 export const createDraft = data => dispatch => (
-    axiosInstance.get('/ops/', {
+    axiosInstance.get('/draft/', {
         op: data.op,
         body: data.body,
         notes: data.notes,
         version_num: data.version_num,
-        is_final: data.is_final
+        is_final: false
 
     })
     .then(response => {
@@ -18,7 +19,7 @@ export const createDraft = data => dispatch => (
     )
 
 export const deleteDraft = id => dispatch => (
-    axiosInstance.get(`/ops/${id}/`, {
+    axiosInstance.get(`/draft/${id}/`, {
         
 
     })
@@ -30,12 +31,13 @@ export const deleteDraft = id => dispatch => (
     })
     )
 
-export const updateOp = data => dispatch => (
-    axiosInstance.patch(`/ops/${data.id}/`, {
-    body: data.body,
-    notes: data.notes,
-    version_num: data.version_num,
-    is_final: data.is_final
+export const updateDraft = data => dispatch => (
+    axiosInstance.patch(`/draft/${data.id}/`, {
+        op: data.op,
+        body: data.body,
+        notes: data.notes,
+        version_num: data.version_num,
+        is_final: false
         
     })
     .then(response => {
