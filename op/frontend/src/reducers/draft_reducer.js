@@ -9,8 +9,8 @@ export default (state = {}, action) => {
         case FETCH_DRAFT:
             return merge({}, action.payload);
         case CREATE_DRAFT:
-            let newState2 = merge({}, state);
-            newState2.ops.push(action.payload);
+            // let newState2 = merge({}, state);
+            // newState2.ops.push(action.payload);
             return newState2;
         case PATCH_DRAFT:
             let newState3 = merge({}, state);
@@ -22,7 +22,7 @@ export default (state = {}, action) => {
                 }           
     })
         case DELETE_DRAFT:
-            let newState = merge({}, state);
+            // let newState = merge({}, state);
             return newState.ops.filter(op =>
                 op.id !== action.payload);
         default :
