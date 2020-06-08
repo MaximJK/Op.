@@ -12,5 +12,5 @@ export const PATCH_OP = 'PATCH_OP';
 export const CREATE_DRAFT = 'CREATE_DRAFT';
 export const PATCH_DRAFT = 'CREATE_DRAFT';
 export const DELETE_DRAFT = 'CREATE_DRAFT';
-export const FETCH_DRAFT = 'CREATE_DRAFT';
+export const FETCH_DRAFTS = 'CREATE_DRAFTS';
 

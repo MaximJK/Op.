@@ -1,6 +1,18 @@
 import { FETCH_DRAFT, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
 import axiosInstance from "./axiosApi";
 
+export const fetchDrafts = id => dispatch => (
+    axiosInstance.get('/draft/', {
+        op: id
+    })
+    .then(response => {
+        return dispatch({
+        type: FETCH_OPS,
+        payload: response.data
+        })
+    })
+    )
+
 export const createDraft = data => dispatch => (
     axiosInstance.post('/draft/', {
         op: data.op,
