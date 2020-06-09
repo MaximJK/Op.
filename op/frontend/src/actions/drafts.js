@@ -1,4 +1,4 @@
-import { FETCH_DRAFT, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
+import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
 import axiosInstance from "./axiosApi";
 
 export const fetchDrafts = id => dispatch => (
@@ -7,8 +7,8 @@ export const fetchDrafts = id => dispatch => (
     })
     .then(response => {
         return dispatch({
-        type: FETCH_OPS,
-        payload: response.data
+        type: FETCH_DRAFTS,
+        payload: {data: response.data, id: id}
         })
     })
     )
@@ -25,7 +25,7 @@ export const createDraft = data => dispatch => (
     .then(response => {
         return dispatch({
         type: CREATE_DRAFT,
-        payload: response.data
+        payload: {data: response.data, id: data.op}
         })
     })
     )

@@ -27,7 +27,7 @@ class OpsForm extends React.Component {
     };
 
     render () {
-        debugger
+        
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>

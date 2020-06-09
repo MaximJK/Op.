@@ -47,7 +47,7 @@ class OpsIndex extends React.Component {
   }
 
   render() {
-    debugger
+    
     let ops;
     
     if (this.props.ops && Object.keys(this.props.ops).length !== 0) {

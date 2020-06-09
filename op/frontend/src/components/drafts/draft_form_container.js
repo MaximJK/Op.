@@ -4,7 +4,7 @@ import { createDraft, updateDraft } from '../../actions/drafts';
 
 
 const msp = (state, ownProps) => {
-     debugger
+     
     
     return {
         "draft": ownProps.location.state.draft,

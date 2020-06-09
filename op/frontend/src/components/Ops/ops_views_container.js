@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
-import {fetchOps} from '../../actions/ops';
+import {fetchDrafts} from '../../actions/drafts';
 import OpsView from './ops_view';
 
-debugger
+
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     return {
         id: state.auth.user.id,
-        op: state.ops[Number(ownProps.match.params.opsid)]
+        op: state.ops[Number(ownProps.match.params.opsid)],
+        drafts: state.drafts
     }
 }
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    // fetchOps:(id) => dispatch(fetchOps(id))
+    fetchDrafts:(id) => dispatch(fetchDrafts(id))
 }}
 
 export default connect(

@@ -1,26 +1,30 @@
 import merge from 'lodash/merge';
-import { FETCH_DRAFT, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from '../actions/types';
+import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from '../actions/types';
 
-
+debugger
 export default (state = {}, action) => {
-    
+    debugger
+    const arrayToObject = (array) =>
+        array.reduce((obj, item) => {
+        obj[item.id] = item
+        return obj
+   }, {})
     switch (action.type) {
         
-        case FETCH_DRAFT:
-            return merge({}, action.payload);
+        case FETCH_DRAFTS:
+            return merge({}, {[action.payload.id]: arrayToObject(action.payload.data)});
         case CREATE_DRAFT:
-            // let newState2 = merge({}, state);
-            // newState2.ops.push(action.payload);
-            return newState2;
+           
+            return merge({}, state, {[action.payload.id]:{[action.payload.data.id]: action.payload.data}});
         case PATCH_DRAFT:
             let newState3 = merge({}, state);
             return newState3map(op => 
                 {if (op.id === action.payload.id){
                     return Object.assign(op, action.payload)
-                } else {
                     return op
                 }           
-    })
+                }
+            )
         case DELETE_DRAFT:
             // let newState = merge({}, state);
             return newState.ops.filter(op =>
