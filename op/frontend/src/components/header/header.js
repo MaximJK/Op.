@@ -8,22 +8,36 @@ class Header extends Component {
     }
   
     render() {
-        let logOutButton
+        let logOutButton;
+        let logInDiv;
+        let logOutDiv;
         if (this.props.isLoggedIn === true) {
             logOutButton = (
                 <button onClick={()=>{this.props.logoutUser()}}> Logout </button>
             )
-        }
-        return (
-            <div>
+            logInDiv = (
+                <div></div>
+            )
+            logOutDiv = (
+                <div></div>
+            )
+        } else {
+            logInDiv = (
                 <Link to={'/login/'}>
                     login
                 </Link>
-
+            )
+            logOutDiv = (
                 <Link to={'/signup/'}>
                     sign up
                 </Link>
-             {logOutButton}
+            )
+        }
+        return (
+            <div>
+            {logInDiv}
+            {logOutDiv}
+            {logOutButton}
    
             </div>
         )
