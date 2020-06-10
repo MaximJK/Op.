@@ -23,6 +23,7 @@ class DraftView extends React.Component {
                     pathname: `/ops/${this.props.id}/draft/edit/`, 
                         state: {'draft': {
                             op: this.props.id,
+                            id: this.props.draft.id,
                             body: this.props.draft.body, 
                             notes: this.props.draft.notes,
                             version_num: this.props.draft.version_num,

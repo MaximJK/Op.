@@ -10,7 +10,7 @@ export const DELETE_OP = 'DELETE_OP';
 export const PATCH_OP = 'PATCH_OP';
 
 export const CREATE_DRAFT = 'CREATE_DRAFT';
-export const PATCH_DRAFT = 'CREATE_DRAFT';
-export const DELETE_DRAFT = 'CREATE_DRAFT';
-export const FETCH_DRAFTS = 'CREATE_DRAFTS';
+export const PATCH_DRAFT = 'PATCH_DRAFT';
+export const DELETE_DRAFT = 'DELETE_DRAFT';
+export const FETCH_DRAFTS = 'FETCH_DRAFTS';
 

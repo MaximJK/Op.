@@ -21,9 +21,9 @@ export default (state = {}, action) => {
             
         case PATCH_OP:
             let newState3 = merge({}, state);
-            let x ={...newState3, [action.payload.id]: action.payload}
+            let patchedState ={...newState3, [action.payload.id]: action.payload}
             
-            return x
+            return patchedState
             
             
         case DELETE_OP:

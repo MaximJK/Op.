@@ -55,7 +55,7 @@ export const updateDraft = data => dispatch => (
     .then(response => {
         return dispatch({
         type: PATCH_DRAFT,
-        payload: response.data
+        payload: {data: response.data, id: data.id}
         })
     })
     )

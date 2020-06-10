@@ -17,14 +17,10 @@ export default (state = {}, action) => {
            
             return merge({}, state, {[action.payload.id]:{[action.payload.data.id]: action.payload.data}});
         case PATCH_DRAFT:
-            let newState3 = merge({}, state);
-            return newState3map(op => 
-                {if (op.id === action.payload.id){
-                    return Object.assign(op, action.payload)
-                    return op
-                }           
-                }
-            )
+            let newState = merge({}, state);
+            let id = action.payload.data.op
+            let patchedState = {...newState, [id]: {...newState[id], [action.payload.data.id]: action.payload.data}}
+            return patchedState
         case DELETE_DRAFT:
             // let newState = merge({}, state);
             return newState.ops.filter(op =>
