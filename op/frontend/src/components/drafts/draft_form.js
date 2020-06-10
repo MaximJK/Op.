@@ -14,7 +14,7 @@ class DraftForm extends React.Component {
             return this.props.createDraft
         } else {
             return this.props.updateDraft
-        }
+        };
     }
     update(field) {
         return (e) => {
@@ -24,8 +24,8 @@ class DraftForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let action = this.defineAction()
-        action(this.state);
+        let action = this.defineAction();
+        action(this.state).then(() => this.props.history.push(`/ops/${this.props.draft.op}`));
     };
 
     render () {
