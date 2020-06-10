@@ -4,7 +4,7 @@ import OpsView from './ops_view';
 
 
 const mapStateToProps = (state, ownProps) => {
-    
+
     return {
         id: state.auth.user.id,
         op: state.ops[Number(ownProps.match.params.opsid)],

@@ -7,29 +7,30 @@ class OpsView extends React.Component {
         super(props);
         this.state = {
             op: {
-        id: this.props.op.id,
-        authors: this.props.op.authors,
-        medium: this.props.op.medium,
-        description: this.props.op.description,
-        title: this.props.op.title,
-        type: this.props.op.type,
-        drafts: this.props.op.draft,
-
-            }
+                id: this.props.op.id,
+                authors: this.props.op.authors,
+                medium: this.props.op.medium,
+                description: this.props.op.description,
+                title: this.props.op.title,
+                type: this.props.op.type,
+                drafts: this.props.op.draft,
+            },
+            draftsFetched: false
       };
     }
 
     componentDidMount() {
-        this.props.fetchDrafts(this.props.op.id)
-        debugger
+        this.props.fetchDrafts(this.props.op.id).then(() => this.setState({draftsFetched: true}))
+        
     }
 
     
     render() {
-        debugger
+         
         let drafts
-        if (this.props.op.draft) {
-        drafts = this.state.op.drafts.map(draft => {
+        if (this.state.draftsFetched === true) {
+            debugger
+        drafts = Object.values(this.props.drafts[this.state.op.id]).map(draft => {
             return (
                 <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>
                 <li key={draft}>
