@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import OpForm from './ops_form';
 import { createOp, updateOp } from '../../actions/ops';
+import {modalOn, modalOff} from '../../actions/modal';
 
 
 const msp = (state, ownProps) => {
@@ -16,7 +17,8 @@ const msp = (state, ownProps) => {
 
     }
     const type = {
-        type: ownProps.type
+        type: ownProps.type,
+        
 }
 
     return {
@@ -28,7 +30,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
         createOp: op => dispatch(createOp(op)),
-        updateOp: op => dispatch(updateOp(op))
+        updateOp: op => dispatch(updateOp(op)),
+        modalOff:() => dispatch(modalOff())
 
     }
 }

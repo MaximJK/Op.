@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import OpsLi from './ops_li'
 import OpsForm from './ops_form_container'
+import { MODAL_ON } from "../../actions/types";
 class OpsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       id: '',
-      modal: false,
       authors: this.props.id,
       medium: '',
       description: '',
@@ -23,7 +23,7 @@ class OpsIndex extends React.Component {
  
   editOp(op) {
     this.setState(
-      {modal: true,
+      {
         id: op.id,
         authors: op.authors,
         medium: op.medium,
@@ -32,18 +32,20 @@ class OpsIndex extends React.Component {
         type: 'edit'
       }
     )
+    this.props.modalOn();
   }
   createOp() {
     this.setState(
-      {modal: true,
+      {
         authors: '',
         medium: '',
         description: '',
         title: '',
         type: 'create'
-
       }
+      
     )
+    this.props.modalOn();
   }
 
   render() {
@@ -77,8 +79,8 @@ class OpsIndex extends React.Component {
     return (
       
       <div>
-        <div id='OpsModal'>
-        {this.state.modal && <OpsForm
+        <div id='OpsModal' >
+        {this.props.modal && <OpsForm
           key={this.state.title}
           id={this.state.id}
           authors= {this.state.authors}

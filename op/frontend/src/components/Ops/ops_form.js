@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
+import { MODAL_OFF } from "../../actions/types";
 
 class OpsForm extends React.Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class OpsForm extends React.Component {
         e.preventDefault();
         let action = this.defineAction()
         action(this.state);
+        this.props.modalOff();
     };
 
     render () {

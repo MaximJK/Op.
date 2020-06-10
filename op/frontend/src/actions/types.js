@@ -14,3 +14,5 @@ export const PATCH_DRAFT = 'PATCH_DRAFT';
 export const DELETE_DRAFT = 'DELETE_DRAFT';
 export const FETCH_DRAFTS = 'FETCH_DRAFTS';
 
+export const MODAL_OFF = 'MODAL_OFF';
+export const MODAL_ON = 'MODAL_ON';
