@@ -137,3 +137,6 @@ uploads/
 
 # development react files
 save_for_reference/*
+
+#vscode
+.vscode

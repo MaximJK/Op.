@@ -13,7 +13,7 @@ class Header extends Component {
         let logOutDiv;
         if (this.props.isLoggedIn === true) {
             logOutButton = (
-                <button onClick={()=>{this.props.logoutUser()}}> Logout </button>
+                <button id='logout' onClick={()=>{this.props.logoutUser()}}> Logout </button>
             )
             logInDiv = (
                 <div></div>
@@ -23,18 +23,19 @@ class Header extends Component {
             )
         } else {
             logInDiv = (
-                <Link to={'/login/'}>
+                <Link id='login' to={'/login/'}>
                     login
                 </Link>
             )
             logOutDiv = (
-                <Link to={'/signup/'}>
+                <Link id='signup' to={'/signup/'}>
                     sign up
                 </Link>
             )
         }
         return (
             <div>
+
             {logInDiv}
             {logOutDiv}
             {logOutButton}

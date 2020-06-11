@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 module.exports = {
     mode: "development",
     entry: ['babel-polyfill', path.resolve(__dirname, 'op/frontend/src/index.js')],
@@ -30,19 +31,13 @@ module.exports = {
                     loader: "babel-loader",
                     options: {presets: ["@babel/env"]}
                 },
-            }
+            },
+            {
+              test: /\.css$/,
+              use: ['style-loader', 'css-loader'],
+            },
+            
         ],
     },
-    // module: {
-    //     rules: [
-    //       {
-    //         test: /\.css$/,
-    //         use: [
-    //           'style-loader',
-    //           'css-loader'
-    //         ]
-    //       }
-    //     ]
-    //   },
-      
-};
+
+}

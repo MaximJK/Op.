@@ -1,10 +1,19 @@
 #header {
     background: #f5ecd4;
-    height: 7em;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
+}
+#login{
+    /* background-color: thistle; */
+}
+
+#signup{
     
 }
+#logout{
+}  
 #headerLogo {
-    width: 250px;
+    width: 18vh;
+    height: 10vh;
 }

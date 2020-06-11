@@ -10,6 +10,9 @@ import DraftForm from './drafts/draft_form_container'
 
 import Splash from './splash/splash'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+// css import
+import '../../static/frontend/style/style.css';
+import '../../static/frontend/style/header.css';
 
 class App extends Component {
 
@@ -21,7 +24,7 @@ class App extends Component {
         return (
             <div className="site">
                 
-                    <header id='header'>
+                    <header id="header">
                     <img id="headerLogo" src={"/static/frontend/Op.LogoV2copy.jpg"}></img>
                         <Route path={"/"} component={HeaderContainer}/>
                     </header>
