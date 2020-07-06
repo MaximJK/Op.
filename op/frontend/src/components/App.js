@@ -11,8 +11,8 @@ import DraftForm from './drafts/draft_form_container'
 import Splash from './splash/splash'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // css import
-import '../../static/frontend/style/style.css';
-import '../../static/frontend/style/header.css';
+import '../../static/frontend/style/style.scss';
+import '../../static/frontend/style/header.scss';
 
 class App extends Component {
 

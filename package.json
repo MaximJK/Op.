@@ -27,7 +27,6 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
@@ -35,7 +34,10 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "css-loader": "^3.5.3",
+    "sass": "^1.26.9",
+    "sass-loader": "^9.0.0",
     "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
     "webpack-bundle-tracker": "^1.0.0-alpha.1"
   }
 }
