@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-
+import modeToggle from './mode_toggle'
 import {darkMode, lightMode} from '../../actions/d_mode';
 
 const mapStateToProps = (state) => {
     
     return {
-        mode: this.state.mode
+        mode: state.dmode
     }
 }
 const mapDispatchToProps = (dispatch) => {

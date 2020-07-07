@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import ModeToggle from './mode_toggle_container'
 // import axiosInstance from "../util/axiosApi";
 class Header extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class Header extends Component {
             {logInDiv}
             {logOutDiv}
             {logOutButton}
-   
+            <ModeToggle/>
             </div>
         )
     }
