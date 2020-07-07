@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import  {faMoon as moon, faSun as sun} from '@fortawesome/free-solid-svg-icons'
 class ModeToggler extends Component {
 
 
@@ -15,6 +15,16 @@ class ModeToggler extends Component {
             return this.props.darkMode();
         }
     }
+    initMode() {
+        var darkThemeSelected = (localStorage.getItem('mode') !== null && localStorage.getItem('mode') === 'dark');
+        // update checkbox
+        
+        darkThemeSelected ? this.props.darkMode() : this.props.lightMode();
+      };
+    
+    componentDidMount() {
+        this.initMode() 
+    }
 
 
 
@@ -24,15 +34,15 @@ class ModeToggler extends Component {
         // <i class="fas fa-sun"></i>
         let altMode
         if (this.props.mode === 'Dark Mode'){
-            altMode = "Light Mode";
+            altMode = sun ;
         } else {
-            altMode = "Dark Mode";
+            altMode = moon ;
         };
 
         return (
             <div>
-                <FontAwesomeIcon icon={faCoffee} />
-                <button onClick={() => this.toggleMode()}>{altMode}</button>
+                <FontAwesomeIcon icon={altMode} onClick={() => this.toggleMode()} />
+                {/* <button onClick={() => this.toggleMode()}>{altMode}</button> */}
             </div>
         )
     }
