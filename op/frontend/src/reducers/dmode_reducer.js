@@ -8,11 +8,11 @@ export default (state = {}, action) => {
             
         //     return merge({}, {'username': action.payload});
         case DARK_MODE:
-        return merge({}, {'mode': 'dark'})
+        return merge({}, {'mode': 'Dark Mode'})
         case LIGHT_MODE:
-            return merge({}, {'mode': 'light'})
+            return merge({}, {'mode': 'Light Mode'})
         default:
-            return merge({}, {'mode': 'light'})
+            return merge({}, {'mode': 'Light Mode'})
         
 
             }

@@ -16,3 +16,6 @@ export const FETCH_DRAFTS = 'FETCH_DRAFTS';
 
 export const MODAL_OFF = 'MODAL_OFF';
 export const MODAL_ON = 'MODAL_ON';
+
+export const DARK_MODE = 'DARK_MODE';
+export const LIGHT_MODE = 'LIGHT_MODE';
