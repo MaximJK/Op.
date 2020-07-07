@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 class ModeToggler extends Component {
 
 
@@ -19,6 +20,8 @@ class ModeToggler extends Component {
 
 
     render () {
+        // <i class="fas fa-moon"></i>
+        // <i class="fas fa-sun"></i>
         let altMode
         if (this.props.mode === 'Dark Mode'){
             altMode = "Light Mode";
@@ -28,6 +31,7 @@ class ModeToggler extends Component {
 
         return (
             <div>
+                <FontAwesomeIcon icon={faCoffee} />
                 <button onClick={() => this.toggleMode()}>{altMode}</button>
             </div>
         )

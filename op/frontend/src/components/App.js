@@ -22,10 +22,10 @@ class App extends Component {
     
     render() {
         return (
-            <div className="site">
+            <div id='site'>
                 
                     <header id="header">
-                    <img id="headerLogo" src={"/static/frontend/Op.LogoV2copy.jpg"}></img>
+                    <img id="headerLogo" src={"/static/frontend/Op.LogoV1transparent.png"}></img>
                         <Route path={"/"} component={HeaderContainer}/>
                     </header>
                     

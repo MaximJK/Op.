@@ -1,12 +1,18 @@
+// @use 'style/mixins';
+// @use 'style/colorThemes';
 #root{
-    background-color:whitesmoke;
+    // background-color:whitesmoke;
     color:black;
     margin: 0;
 }
-body{
-    margin: 0;
-}
-body.dark{
+body {
+    margin:0 ;
+  }
+
+#site{
+    height: 100vh;
+  }
+#site.dark{
     background: black;
 }
 
