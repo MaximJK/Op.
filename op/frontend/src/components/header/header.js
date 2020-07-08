@@ -35,7 +35,7 @@ class Header extends Component {
             )
         }
         return (
-            <div>
+            <div className="loginHeader">
 
             {logInDiv}
             {logOutDiv}

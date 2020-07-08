@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import  {faMoon as moon, faSun as sun} from '@fortawesome/free-solid-svg-icons'
 class ModeToggler extends Component {
 
-
-
-
-
     toggleMode() {
         console.log(this.props.mode)
         if (this.props.mode === 'Dark Mode') {
@@ -40,7 +36,7 @@ class ModeToggler extends Component {
         };
 
         return (
-            <div>
+            <div className='modeIcon'>
                 <FontAwesomeIcon icon={altMode} onClick={() => this.toggleMode()} />
                 {/* <button onClick={() => this.toggleMode()}>{altMode}</button> */}
             </div>

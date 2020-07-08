@@ -33,7 +33,7 @@ class Signup extends Component{
 
     render() {
         return (
-            <div>
+            <div className='authDiv'>
                 Signup
                 <form onSubmit={this.handleSubmit}>
                     <label>

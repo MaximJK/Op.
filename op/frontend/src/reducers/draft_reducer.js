@@ -1,9 +1,9 @@
 import merge from 'lodash/merge';
 import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from '../actions/types';
 
-debugger
+
 export default (state = {}, action) => {
-    debugger
+    
     const arrayToObject = (array) =>
         array.reduce((obj, item) => {
         obj[item.id] = item

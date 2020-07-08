@@ -29,7 +29,7 @@ class OpsView extends React.Component {
          
         let drafts
         if (this.state.draftsFetched === true) {
-            debugger
+            
         drafts = Object.values(this.props.drafts[this.state.op.id]).map(draft => {
             return (
                 <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>

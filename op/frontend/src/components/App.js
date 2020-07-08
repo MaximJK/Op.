@@ -13,6 +13,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // css import
 import '../../static/frontend/style/style.scss';
 import '../../static/frontend/style/header.scss';
+import '../../static/frontend/style/auth.scss';
 
 class App extends Component {
 
