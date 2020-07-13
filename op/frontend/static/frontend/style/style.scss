@@ -1,7 +1,6 @@
 * {box-sizing:border-box;}
 #root{
-    
-    color:black;
+    color:#121212;
     margin: 0;
 }
 body {
@@ -10,13 +9,22 @@ body {
 
 #site{
     height: 100vh;
+    background:#f5f5f5;
   }
 #site.dark{
-    background: black;
+    background: #121212;
+    color: #E0E0E0
 }
 
 .nav-link{
     color:black;
     border: 1px solid white;
     padding: 1em;
+}
+
+a{
+  margin: 0;
+}
+h3{
+  margin:0;
 }

@@ -7,8 +7,7 @@ import OpsContainer from './ops/ops_index_container'
 import OpsView from './ops/ops_views_container'
 import DraftView from './drafts/draft_view_container'
 import DraftForm from './drafts/draft_form_container'
-
-import Splash from './splash/splash'
+import Splash from './splash/Splash'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // css import
 import '../../static/frontend/style/style.scss';

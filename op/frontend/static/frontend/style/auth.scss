@@ -1,7 +1,19 @@
 .authDiv{
-display: inline-block;
-/* justify-content: center; */
-margin-left: auto;
-width: 100%;
-text-align: center;
+    height: fit-content;
+    margin: auto;
+    width: fit-content;
+    border: 1px solid #909192;
+    text-align: center;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-bottom: 3vh;
+    margin-top: 5vh;
+    box-shadow: 4px 7px 7px 0px #494949;
+}
+.authForm{
+
+}
+.authForm > input{
+margin: 1vh;
 }

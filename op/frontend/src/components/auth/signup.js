@@ -34,23 +34,30 @@ class Signup extends Component{
     render() {
         return (
             <div className='authDiv'>
-                Signup
-                <form onSubmit={this.handleSubmit}>
+                <h3>Signup</h3>
+                <br></br>
+                <form className="authForm" onSubmit={this.handleSubmit}>
                     <label>
                         Username:
+                    </label>
+                    <br></br>
                         <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
                         { this.state.errors.username ? this.state.errors.username : null}
-                    </label>
+                        <br></br>
                     <label>
                         Email:
+                    </label>
+                    <br></br>
                         <input name="email" type="email" value={this.state.email} onChange={this.handleChange}/>
                         { this.state.errors.email ? this.state.errors.email : null}
-                    </label>
+                        <br></br>
                     <label>
                         Password:
+                    </label>
+                    <br></br>
                         <input name="password" type="password" value={this.state.password} onChange={this.handleChange}/>
                         { this.state.errors.password ? this.state.errors.password : null}
-                    </label>
+                        <br></br>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>

@@ -29,16 +29,22 @@ class Login extends Component {
     render() {
         return (
             <div className='authDiv'>
-                Login
-                <form onSubmit={this.handleSubmit}>
+                <h3>Login</h3>
+                <br></br>
+                <form className="authForm" onSubmit={this.handleSubmit}>
                     <label>
                         Username:
-                        <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
                     </label>
+                    <br></br>
+                        <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+                    
+                    <br></br>
                     <label>
                         Password:
-                        <input name="password" type="password" value={this.state.password} onChange={this.handleChange}/>
                     </label>
+                    <br></br>
+                        <input name="password" type="password" value={this.state.password} onChange={this.handleChange}/>
+                        <br></br>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
