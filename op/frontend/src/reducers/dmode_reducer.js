@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { DARK_MODE, LIGHT_MODE } from '../actions/types';
 
 export default (state = {}, action) => {
-    debugger
+    
     switch (action.type) {
         // case LOGIN_USER:
             
@@ -15,5 +15,5 @@ export default (state = {}, action) => {
             return state
         
 
-            }
-}
+            };
+};

@@ -13,7 +13,7 @@ class Splash extends React.Component {
       <Link to={'/signup/'}>Sign up</Link>
     );
     return (
-      <div>
+      <div className="authDiv">
       Welcome to Op., the social art production platform. {signUp} to get started or {logIn} if you already have an account.
       </div>
     );
