@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import OpsLi from './ops_li'
 import OpsForm from './ops_form_container'
-import { MODAL_ON } from "../../actions/types";
+import { MODAL_ON } from "../../actions/action_types";
 class OpsIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -78,7 +78,7 @@ class OpsIndex extends React.Component {
     
     return (
       
-      <div>
+      <div className="authDiv" >
         <div id='OpsModal' >
         {this.props.modal && <OpsForm
           key={this.state.title}

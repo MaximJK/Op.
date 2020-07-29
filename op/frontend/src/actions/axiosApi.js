@@ -4,6 +4,7 @@ const baseURL = 'http://127.0.0.1:8000/api/'
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
+    // if not returned in x miliseconds request is aborted.
     timeout: 5000,
     headers: {
         'Authorization': localStorage.getItem('access_token') ? "JWT " + localStorage.getItem('access_token') : null,
@@ -18,11 +19,14 @@ axiosInstance.interceptors.response.use(
     error => {
         const originalRequest = error.config;
 
-        // Prevent infinite loops
+    // prevent occasional ∞ loop with refresh token
         if (error.response.status === 401 && originalRequest.url === baseURL+'token/refresh/') {
             window.location.href = '/login/';
             return Promise.reject(error);
         }
+
+    // if accesstoken is expired, check refresh token validity and if valid get new token pair
+    // otherwise get redirect to login
 
         if (error.response.data.code === "token_not_valid" &&
             error.response.status === 401 && 

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { DARK_MODE, LIGHT_MODE } from '../actions/types';
+import { DARK_MODE, LIGHT_MODE } from '../actions/action_types';
 
 export default (state = {}, action) => {
     

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { MODAL_ON, MODAL_OFF} from '../actions/types';
+import { MODAL_ON, MODAL_OFF} from '../actions/action_types';
 
 export default (state = {}, action) => {
     

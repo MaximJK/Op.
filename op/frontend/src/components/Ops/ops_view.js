@@ -36,7 +36,7 @@ class OpsView extends React.Component {
                 <li key={draft}>
                     {draft.body}
                     <br></br>
-                    'draft number:'{draft.version_num}
+                    draft number:{draft.version_num}
                 </li>
                 </Link>
             )
@@ -46,7 +46,7 @@ class OpsView extends React.Component {
             )
         }
         return (
-        <div>
+        <div className="authDiv" >
             {this.state.op.title}
             <div>
             {this.props.op.medium}
@@ -72,7 +72,7 @@ class OpsView extends React.Component {
                 {drafts}
             </ul>
         <Link to={`/ops/`}>
-        "Back to Index"
+        Back to Index
         </Link>
         </div>
     

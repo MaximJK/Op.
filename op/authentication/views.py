@@ -18,9 +18,7 @@ class CustomUser(viewsets.ModelViewSet):
     serializer_class = CustomUserSerializer
     permission_classes = [permissions.AllowAny,]
     # authentication_classes = ()
-    filterset_fields = {'username'}
-    
-        
+    filterset_fields = {'id', 'username'}
     
 class CustomUserCreate(APIView):
     permission_classes = [permissions.AllowAny,]
@@ -33,13 +31,8 @@ class CustomUserCreate(APIView):
             if user:
                 json = serializer.data
                 return Response(json, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)   
 
-class HelloWorldView(APIView):
-
-    def get(self, request):
-        return Response(data={"hello":"world"}, status=status.HTTP_200_OK)
 
 
 class LogoutAndBlacklistRefreshTokenForUserView(APIView):

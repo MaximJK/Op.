@@ -5,7 +5,7 @@ import {logoutUser} from '../../actions/auth';
 const mapStateToProps = (state) => {
     
     return {
-        isLoggedIn: state.auth.user !== undefined,
+        isLoggedIn: state.auth.id !== undefined,
         state: state
     }
 }

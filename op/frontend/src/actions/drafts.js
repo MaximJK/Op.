@@ -1,4 +1,4 @@
-import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './types'
+import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './action_types'
 import axiosInstance from "./axiosApi";
 
 export const fetchDrafts = id => dispatch => (
@@ -9,9 +9,9 @@ export const fetchDrafts = id => dispatch => (
         return dispatch({
         type: FETCH_DRAFTS,
         payload: {data: response.data, id: id}
-        })
+        });
     })
-    )
+);
 
 export const createDraft = data => dispatch => (
     axiosInstance.post('/draft/', {
@@ -26,9 +26,9 @@ export const createDraft = data => dispatch => (
         return dispatch({
         type: CREATE_DRAFT,
         payload: {data: response.data, id: data.op}
-        })
+        });
     })
-    )
+);
 
 export const deleteDraft = id => dispatch => (
     axiosInstance.delete(`/draft/${id}/`, {
@@ -39,9 +39,9 @@ export const deleteDraft = id => dispatch => (
         return dispatch({
         type: DELETE_DRAFT,
         payload: id
-        })
+        });
     })
-    )
+);
 
 export const updateDraft = data => dispatch => (
     axiosInstance.patch(`/draft/${data.id}/`, {

@@ -31,7 +31,7 @@ class DraftForm extends React.Component {
     render () {
         
         return (
-            <div>
+            <div className="authDiv">
                 <form onSubmit={this.handleSubmit}>
                     
                     <label>Body:</label>

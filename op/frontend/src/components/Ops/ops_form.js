@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
-import { MODAL_OFF } from "../../actions/types";
+import { MODAL_OFF } from "../../actions/action_types";
 
 class OpsForm extends React.Component {
     constructor(props) {

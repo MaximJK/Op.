@@ -3,12 +3,12 @@ import OpsIndex from './ops_index';
 import {fetchOps,deleteOp  } from '../../actions/ops';
 import {modalOn, modalOff} from '../../actions/modal';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({id = 0, ops, modal}) => {
     
     return {
-        id: state.auth.user.id,
-        ops: state.ops,
-        modal: state.modal
+        id: id,
+        ops: ops,
+        modal: modal
     }
 }
 const mapDispatchToProps = (dispatch) => {

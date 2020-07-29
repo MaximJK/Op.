@@ -10,7 +10,7 @@ const msp = (state, ownProps) => {
      
     const op =  {
         id: ownProps.id,
-        authors: state.auth.user.id,
+        authors: state.auth.id,
         medium: ownProps.medium,
         description: ownProps.description,
         title: ownProps.title

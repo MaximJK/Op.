@@ -3,12 +3,12 @@ import {fetchDrafts} from '../../actions/drafts';
 import OpsView from './ops_view';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({id = 0, ops, drafts}, ownProps) => {
 
     return {
-        id: state.auth.user.id,
-        op: state.ops[Number(ownProps.match.params.opsid)],
-        drafts: state.drafts
+        id: id,
+        op: ops[Number(ownProps.match.params.opsid)],
+        drafts: drafts
     }
 }
 const mapDispatchToProps = (dispatch) => {

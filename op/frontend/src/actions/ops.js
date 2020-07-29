@@ -1,4 +1,4 @@
-import { FETCH_OPS, CREATE_OP, DELETE_OP, PATCH_OP } from './types'
+import { FETCH_OPS, CREATE_OP, DELETE_OP, PATCH_OP } from './action_types'
 import axiosInstance from "./axiosApi";
 
 export const fetchOps = id => dispatch => (
@@ -9,9 +9,9 @@ export const fetchOps = id => dispatch => (
         return dispatch({
         type: FETCH_OPS,
         payload: response.data
-        })
+        });
     })
-    )
+);
 
 export const createOp = data => dispatch => (
     axiosInstance.post('/ops/', {
@@ -25,9 +25,9 @@ export const createOp = data => dispatch => (
         return dispatch({
         type: CREATE_OP,
         payload: response.data
-        })
+        });
     })
-    )
+);
 
 export const deleteOp = data => dispatch => (
     axiosInstance.delete(`/ops/${data}/`, {
@@ -36,9 +36,9 @@ export const deleteOp = data => dispatch => (
         return dispatch({
         type: DELETE_OP,
         payload: data
-        })
+        });
     })
-    )
+);
 
 export const updateOp = data => dispatch => (
     axiosInstance.patch(`/ops/${data.id}/`, {
@@ -47,12 +47,11 @@ export const updateOp = data => dispatch => (
     title: data.title,
     description: data.description,
     is_public: 'False'
-        
     })
     .then(response => {
         return dispatch({
         type: PATCH_OP,
         payload: response.data
-        })
+        });
     })
-    )
+);

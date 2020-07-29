@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from '../actions/types';
+import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from '../actions/action_types';
 
 
 export default (state = {}, action) => {

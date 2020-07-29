@@ -10,20 +10,18 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def get_token(cls, user):
         token = super(MyTokenObtainPairSerializer, cls).get_token(user)
 
-        # Add custom claims
+        # custom property for testing
         token['fav_color'] = user.fav_color
         return token
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
-    """
-    Currently unused in preference of the below.
-    """
-    email = serializers.EmailField(
-        required=True
-    )
-    username = serializers.CharField(required=True)
-    password = serializers.CharField(min_length=8, write_only=True, required=True)
+    # using custom create
+    # email = serializers.EmailField(
+    #     required=True
+    # )
+    # username = serializers.CharField(required=True)
+    # password = serializers.CharField(min_length=8, write_only=True, required=True)
     
 
     class Meta:

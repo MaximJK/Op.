@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { FETCH_OPS, DELETE_OP, CREATE_OP, PATCH_OP } from '../actions/types';
+import { FETCH_OPS, DELETE_OP, CREATE_OP, PATCH_OP } from '../actions/action_types';
 
 
 export default (state = {}, action) => {

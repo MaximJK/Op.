@@ -12,9 +12,8 @@ class ModeToggler extends Component {
         }
     }
     initMode() {
-        var darkThemeSelected = (localStorage.getItem('mode') !== null && localStorage.getItem('mode') === 'dark');
-        // update checkbox
-        
+        let darkThemeSelected = (localStorage.getItem('mode') !== null && localStorage.getItem('mode') === 'dark');
+       
         darkThemeSelected ? this.props.darkMode() : this.props.lightMode();
       };
     

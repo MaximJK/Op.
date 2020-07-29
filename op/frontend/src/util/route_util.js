@@ -23,7 +23,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 const mapStateToProps = state => (
-    { loggedIn: Boolean(state.auth.user) }
+    { loggedIn: Boolean(state.auth.id) }
     
 );
 

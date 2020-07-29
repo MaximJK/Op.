@@ -17,7 +17,7 @@ class DraftView extends React.Component {
     render() {
         
         return (
-        <div>
+        <div className="authDiv">
             <div >
                 <Link to={{ 
                     pathname: `/ops/${this.props.id}/draft/edit/`, 
