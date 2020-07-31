@@ -37,10 +37,10 @@ class DraftForm extends React.Component {
                     <label>Body:</label>
                     <br></br>
                    <div>
-                        <input
+                        <textarea
                             className=""
                             value={this.state.body}
-                            type='text'
+                            rows='12'
                             onChange={this.update('body')}
                          />
                     </div>
@@ -48,10 +48,10 @@ class DraftForm extends React.Component {
                     <div>
                     <label>Notes:</label>
                     <br></br>
-                        <input
+                        <textarea
                             className=""
                             value={this.state.notes}
-                            type='text'
+                            rows='6'
                             onChange={this.update('notes')}
                          />
                     </div>

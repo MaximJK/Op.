@@ -30,7 +30,9 @@ class App extends Component {
             <div id='site'>
                 
                     <header id="header">
+                        <Link to='/'>
                     <img id="headerLogo" src={"/static/frontend/Op.LogoV1transparent.png"}></img>
+                        </Link>
                         <Route path={"/"} component={HeaderContainer}/>
                     </header>
                     

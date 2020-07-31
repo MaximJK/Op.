@@ -8,7 +8,7 @@ const mapStateToProps = ({id = 0, ops, drafts}, ownProps) => {
     return {
         id: id,
         op: ops[Number(ownProps.match.params.opsid)],
-        drafts: drafts
+        drafts: ops[Number(ownProps.match.params.opsid).draft]
     }
 }
 const mapDispatchToProps = (dispatch) => {

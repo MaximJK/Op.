@@ -3,12 +3,19 @@ import Header from './header';
 import {logoutUser} from '../../actions/auth';
 
 const mapStateToProps = (state) => {
+    let isLoggedIn = (state.auth.id !== undefined);
+    let username;
+    if (isLoggedIn) {
+        username = state.auth.username
+    };
     
     return {
-        isLoggedIn: state.auth.id !== undefined,
-        state: state
-    }
-}
+        isLoggedIn: isLoggedIn,
+        username: username,
+        state: state,
+
+    };
+};
 const mapDispatchToProps = (dispatch) => {
     
     return {

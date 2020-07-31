@@ -21,24 +21,29 @@ class OpsView extends React.Component {
 
     componentDidMount() {
         this.props.fetchDrafts(this.props.op.id).then(() => this.setState({draftsFetched: true}))
-        
     }
-
+   
     
     render() {
          
-        let drafts
+        let drafts;
         if (this.state.draftsFetched === true) {
-            
-        drafts = Object.values(this.props.drafts[this.state.op.id]).map(draft => {
+        
+        drafts = this.props.op.draft.map(draft => {
+            let body;
+            if (draft.body.length > 10) {
+                body = draft.body.slice(0,10) + '...'
+            };
             return (
-                <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>
                 <li key={draft}>
-                    {draft.body}
+                    draft number {draft.version_num}
                     <br></br>
-                    draft number:{draft.version_num}
-                </li>
+                    <div>
+                <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>
+                    {body}
                 </Link>
+                    </div>
+                </li>
             )
         })} else {
             return (
@@ -47,12 +52,14 @@ class OpsView extends React.Component {
         }
         return (
         <div className="authDiv" >
-            {this.state.op.title}
+            <h3>{this.state.op.title}</h3>
             <div>
-            {this.props.op.medium}
+            Medium: {this.props.op.medium}
+            <br></br>
             {this.props.op.description}
-            {this.props.op.medium}
-            'number of drafts': {drafts.length}
+            <br></br>
+            Number of Drafts: {drafts.length}
+            <br></br>
             </div>
             <div >
                 <Link to={{ 

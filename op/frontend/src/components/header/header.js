@@ -9,12 +9,14 @@ class Header extends Component {
     }
   
     render() {
-        let logOutButton;
+        let logOutDiv;
         let logInDiv;
         let signUpDiv;
         if (this.props.isLoggedIn === true) {
-            logOutButton = (
+            logOutDiv = (
+                <div id="greeting"> Hello {this.props.username}
                 <button id='logout' onClick={()=>{this.props.logoutUser()}}> Logout </button>
+                </div>
             )
             logInDiv = (
                 <div></div>
@@ -39,7 +41,7 @@ class Header extends Component {
 
             {logInDiv}
             {signUpDiv}
-            {logOutButton}
+            {logOutDiv}
             <ModeToggle/>
             </div>
         )

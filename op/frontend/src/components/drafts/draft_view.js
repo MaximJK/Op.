@@ -32,13 +32,15 @@ class DraftView extends React.Component {
                     'type': 'edit' }
                     }}>edit draft</Link>
             </div>
-        <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete op</button>
-            
+            <br></br>
+        <br></br>  
         {this.props.draft.body}
+        <br></br>
         {this.props.draft.notes}
-        
         <br/>
 
+        <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete draft</button>
+        <br></br>
         <Link to={`/ops/${this.props.id}/`} >
            `back to Op.'
         </Link>

@@ -3,7 +3,7 @@ import axiosInstance from "./axiosApi";
 
 export const fetchDrafts = id => dispatch => (
     axiosInstance.get('/draft/', {
-        op: id
+        params: {op: id}
     })
     .then(response => {
         return dispatch({
