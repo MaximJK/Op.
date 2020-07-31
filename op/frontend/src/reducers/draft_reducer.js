@@ -9,10 +9,10 @@ export default (state = {}, action) => {
         obj[item.id] = item
         return obj
    }, {})
-   debugger
+   
     switch (action.type) {
         case FETCH_DRAFTS:
-            return merge({}, state, {[action.payload.id]: arrayToObject(action.payload.data)});
+            return merge({}, {[action.payload.id]: arrayToObject(action.payload.data)});
         case CREATE_DRAFT:
            
             return merge({}, state, {[action.payload.id]:{[action.payload.data.id]: action.payload.data}});

@@ -28,11 +28,13 @@ class OpsView extends React.Component {
          
         let drafts;
         if (this.state.draftsFetched === true) {
-        
-        drafts = this.props.op.draft.map(draft => {
+       
+        drafts = Object.values(this.props.drafts[this.props.op.id]).map(draft => {
             let body;
-            if (draft.body.length > 10) {
-                body = draft.body.slice(0,10) + '...'
+            if (draft.body.length > 15) {
+                body = draft.body.slice(0,15) + '...'
+            } else {
+                body = draft.body
             };
             return (
                 <li key={draft}>
