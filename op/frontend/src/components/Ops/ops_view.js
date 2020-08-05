@@ -11,7 +11,7 @@ class OpsView extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchDrafts(this.props.op.id).then(() => this.setState({draftsFetched: true}))
+        this.props.fetchDrafts(this.props.op).then(() => this.setState({draftsFetched: true}))
     }
    
     
@@ -20,7 +20,7 @@ class OpsView extends React.Component {
         let drafts;
         if (this.state.draftsFetched === true) {
        
-        drafts = Object.values(this.props.drafts[this.props.op.id]).map(draft => {
+        drafts = Object.values(this.props.drafts[this.props.op]).map(draft => {
             let body;
             if (draft.body.length > 15) {
                 body = draft.body.slice(0,15) + '...'

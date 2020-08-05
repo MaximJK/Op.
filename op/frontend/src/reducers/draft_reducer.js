@@ -14,7 +14,6 @@ export default (state = {}, action) => {
         case FETCH_DRAFTS:
             return merge({}, {[action.payload.id]: arrayToObject(action.payload.data)});
         case CREATE_DRAFT:
-           
             return merge({}, state, {[action.payload.id]:{[action.payload.data.id]: action.payload.data}});
         case PATCH_DRAFT:
             let newState = merge({}, state);
