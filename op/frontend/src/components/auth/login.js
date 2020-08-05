@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from 'react-router-dom';
+import { loginUser } from "../../actions/auth";
 
 class Login extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Login extends Component {
         event.preventDefault();
         
         try {
-            this.props.loginUser(this.state).then(() => this.props.history.push("/ops/"));
+            this.props.loginUser(this.state).then(() => this.props.logIn()).then(() => this.props.history.push("/ops/"));
         } catch (error) {
             throw error;
         }

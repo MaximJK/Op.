@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Header from './header';
 import {logoutUser} from '../../actions/auth';
+import { LOG_OUT } from "../../actions/action_types";
 
 const mapStateToProps = (state) => {
     let isLoggedIn = (state.auth.id !== undefined);
@@ -19,7 +20,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    logoutUser:() => dispatch(logoutUser())
+    logoutUser:() => dispatch(logoutUser()),
+    logOut:() => dispatch({type: LOG_OUT})
 }}
 
 export default connect(

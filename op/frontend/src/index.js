@@ -4,6 +4,15 @@ import {BrowserRouter} from 'react-router-dom'
 import App from './components/App';
 import { Provider } from "react-redux";
 import store from './store';
+import jwt_decode from "jwt-decode";
+import {fetchUserById} from "./actions/auth"
+
+let refresh = window.localStorage.getItem('refresh_token');
+if (refresh !== undefined && refresh !== null) {
+    let decoded = jwt_decode(refresh);
+    store.dispatch({type: 'LOG_IN'});
+    store.dispatch(fetchUserById(decoded.user_id));
+};
 
 render((
     <Provider store={store}>

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import ModeToggle from './mode_toggle_container'
-// import axiosInstance from "../util/axiosApi";
+import { LOG_OUT } from "../../actions/action_types";
+import { connect } from 'react-redux';
 class Header extends Component {
     constructor(props) {
         super(props)
@@ -15,7 +16,8 @@ class Header extends Component {
         if (this.props.isLoggedIn === true) {
             logOutDiv = (
                 <div id="greeting"> Hello {this.props.username}
-                <button id='logout' onClick={()=>{this.props.logoutUser()}}> Logout </button>
+                
+                <button id='logout' onClick={()=>{this.props.logoutUser().then(() => this.props.logOut()).then(() => this.props.history.push("/"))}}> Logout </button>
                 </div>
             )
             logInDiv = (
