@@ -13,16 +13,24 @@ class DraftView extends React.Component {
                 medium: this.props.draft.notes,
         }
       };
-    }
+    };
+
+    componentDidMount() {
+        debugger
+        if(Object.keys(this.props.draft).length === 0 && this.props.draft.constructor === Object) {
+            this.props.fetchDrafts(this.props.op);
+        };
+    };
+
     render() {
         
         return (
         <div className="authDiv">
             <div >
                 <Link to={{ 
-                    pathname: `/ops/${this.props.id}/draft/edit/`, 
+                    pathname: `/ops/${this.props.op}/draft/edit/`, 
                         state: {'draft': {
-                            op: this.props.id,
+                            op: this.props.op,
                             id: this.props.draft.id,
                             body: this.props.draft.body, 
                             notes: this.props.draft.notes,
@@ -41,7 +49,7 @@ class DraftView extends React.Component {
 
         <button onClick={() => {{this.props.deleteDraft(op.draft)}}}>delete draft</button>
         <br></br>
-        <Link to={`/ops/${this.props.id}/`} >
+        <Link to={`/ops/${this.props.op}/`} >
            `back to Op.'
         </Link>
         </div>

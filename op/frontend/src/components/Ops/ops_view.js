@@ -32,7 +32,7 @@ class OpsView extends React.Component {
                     draft number {draft.version_num}
                     <br></br>
                     <div>
-                <Link to={`/ops/${this.props.op.id}/drafts/${draft.id}/`}>
+                <Link to={`/ops/${this.props.op}/drafts/${draft.id}/`}>
                     {body}
                 </Link>
                     </div>
