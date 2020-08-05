@@ -17,7 +17,6 @@ class OpsIndex extends React.Component {
 
   }
   componentDidMount() {
-    
     this.props.fetchOps(this.props.id)
 }
  
@@ -58,7 +57,7 @@ class OpsIndex extends React.Component {
         <div>
        
         <OpsLi
-        key={op.id}
+        key={op.title}
         id={op.id}
         title={op.title}
         drafts={op.draft}

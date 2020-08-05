@@ -6,15 +6,6 @@ class OpsView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            op: {
-                id: this.props.op.id,
-                authors: this.props.op.authors,
-                medium: this.props.op.medium,
-                description: this.props.op.description,
-                title: this.props.op.title,
-                type: this.props.op.type,
-                drafts: this.props.op.draft,
-            },
             draftsFetched: false
       };
     }
@@ -54,7 +45,7 @@ class OpsView extends React.Component {
         }
         return (
         <div className="authDiv" >
-            <h3>{this.state.op.title}</h3>
+            <h3>{this.props.op.title}</h3>
             <div>
             Medium: {this.props.op.medium}
             <br></br>

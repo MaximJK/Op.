@@ -3,10 +3,10 @@ import OpsIndex from './ops_index';
 import {fetchOps,deleteOp  } from '../../actions/ops';
 import {modalOn, modalOff} from '../../actions/modal';
 
-const mapStateToProps = ({id = 0, ops, modal}) => {
+const mapStateToProps = ({auth, ops, modal}) => {
     
     return {
-        id: id,
+        id: auth.id,
         ops: ops,
         modal: modal
     }

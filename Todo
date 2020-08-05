@@ -1,17 +1,16 @@
 Next Step:
--sass compiling
 
--style what I have
--persist session on refresh
+    -style what I have
+    -persist session on refresh
 
 Future Slices:
--social:
-    -user profile & public page
-    -friends authorization
-    -comments
-    -public feed
--multimedia support:
-    Photos, Video, web canvas, audio, etc
+    -social:
+        -user profile & public page
+        -friends authorization
+        -comments
+        -public feed
+    -multimedia support:
+        Photos, Video, web canvas, audio, etc
 
--chat feature
+    -chat feature
 

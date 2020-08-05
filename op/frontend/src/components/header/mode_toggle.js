@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import  {faMoon as moon, faSun as sun} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import  {faMoon as moon, faSun as sun} from '@fortawesome/free-solid-svg-icons';
+import jwt_decode from "jwt-decode";
 class ModeToggler extends Component {
 
     toggleMode() {
+       
         console.log(this.props.mode)
         if (this.props.mode === 'Dark Mode') {
             return this.props.lightMode();
@@ -18,6 +20,13 @@ class ModeToggler extends Component {
       };
     
     componentDidMount() {
+        let refresh = window.localStorage.getItem('refresh_token')
+        if (refresh !== undefined) {
+            let decoded = jwt_decode(refresh)
+            debugger
+
+            this.props.fetchUserById(decoded.user_id)
+        }
         this.initMode() 
     }
 
