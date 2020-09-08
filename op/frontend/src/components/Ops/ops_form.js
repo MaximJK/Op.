@@ -31,7 +31,7 @@ class OpsForm extends React.Component {
     render () {
         
         return (
-            <div >
+            <div className='modalBox' >
                 <form onSubmit={this.handleSubmit}>
                     
                     <label>title</label>

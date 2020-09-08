@@ -16,7 +16,7 @@ import {fetchUserById, logoutUser} from '../actions/auth'
 import '../../static/frontend/style/style.scss';
 import '../../static/frontend/style/header.scss';
 import '../../static/frontend/style/auth.scss';
-import jwt_decode from "jwt-decode"
+import '../../static/frontend/style/ops.scss';
 
 class App extends Component {
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import OpsLi from './ops_li'
 import OpsForm from './ops_form_container'
 import { MODAL_ON } from "../../actions/action_types";
+import Popup from 'reactjs-popup';
+
 class OpsIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,8 @@ class OpsIndex extends React.Component {
       medium: '',
       description: '',
       title: '',
-      type: ''
+      type: '',
+      modal: this.props.modal
   };
 
   }
@@ -55,7 +58,6 @@ class OpsIndex extends React.Component {
       ops = Object.values(this.props.ops).map(op => {
       return(
         <div>
-       
         <OpsLi
         key={op.title}
         id={op.id}
@@ -71,14 +73,14 @@ class OpsIndex extends React.Component {
       ops = <li></li>
     };
     
-  
-     
+    
     
     
     return (
       
       <div className="authDiv" >
-        <div id='OpsModal' >
+        
+        <div id='OpsModal' style={this.props.modal ? {} :  {display: 'none'}} onClick={() => {this.props.modalOff()}}>
         {this.props.modal && <OpsForm
           key={this.state.title}
           id={this.state.id}
