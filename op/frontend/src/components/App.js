@@ -29,14 +29,14 @@ class App extends Component {
         // let refresh = window.localStorage.getItem('refresh_token')
         // if (refresh !== undefined) {
         //     let decoded = jwt_decode(refresh)
-        //     debugger
+        //     
 
         //     this.props.fetchUserById(decoded.user_id)
         // }
     }
     
     render() {
-        debugger
+        
         return (
             <div id='site'>
                 

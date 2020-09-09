@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import OpsLi from './ops_li'
-import OpsForm from './ops_form_container'
+import OpsLi from './ops_li';
+import OpsForm from './ops_form_container';
 import { MODAL_ON } from "../../actions/action_types";
 import Popup from 'reactjs-popup';
 
@@ -50,6 +50,15 @@ class OpsIndex extends React.Component {
     this.props.modalOn();
   }
 
+  modalClick(event) {
+    event.preventDefault();
+    console.log(event.currentTarget.id)
+    console.log(event.currentTarget)
+    if (event.currentTarget.id === 'OpsModal') {
+      this.props.modalOff();
+    };
+  };
+
   render() {
     
     let ops;
@@ -79,8 +88,9 @@ class OpsIndex extends React.Component {
     return (
       
       <div className="authDiv" >
-        
-        <div id='OpsModal' style={this.props.modal ? {} :  {display: 'none'}} onClick={() => {this.props.modalOff()}}>
+        <div>
+        <div id='OpsModal' style={this.props.modal ? {} :  {display: 'none'}} onClick={e => this.modalClick(e)}>
+          </div>
         {this.props.modal && <OpsForm
           key={this.state.title}
           id={this.state.id}
@@ -90,7 +100,7 @@ class OpsIndex extends React.Component {
           title= {this.state.title}
           type= {this.state.type}
           />}
-        </div>
+          </div>
       <button onClick={() => {this.createOp()}}>create op</button>
         <div>
         your Ops:

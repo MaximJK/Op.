@@ -16,7 +16,7 @@ class DraftView extends React.Component {
     };
 
     componentDidMount() {
-        debugger
+        
         if(Object.keys(this.props.draft).length === 0 && this.props.draft.constructor === Object) {
             this.props.fetchDrafts(this.props.op);
         };

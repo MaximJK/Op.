@@ -4,7 +4,7 @@ import DraftView from './draft_view';
 import {fetchDrafts} from '../../actions/drafts';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     let op = Number(ownProps.match.params.opsid);
     let draft
     if (Object.keys(state.drafts).length === 0 && state.drafts.constructor === Object) {

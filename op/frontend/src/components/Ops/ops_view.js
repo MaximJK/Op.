@@ -16,7 +16,7 @@ class OpsView extends React.Component {
    
     
     render() {
-         
+         debugger
         let drafts;
         if (this.state.draftsFetched === true) {
        
