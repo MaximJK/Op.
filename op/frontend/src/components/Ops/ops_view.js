@@ -11,6 +11,7 @@ class OpsView extends React.Component {
     }
 
     componentDidMount() {
+        this.props
         this.props.fetchDrafts(this.props.op).then(() => this.setState({draftsFetched: true}))
     }
    

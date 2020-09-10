@@ -14,6 +14,7 @@ const mapStateToProps = ({ auth, ops, drafts}, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     
     return {
+        
     fetchDrafts:(id) => dispatch(fetchDrafts(id))
 }}
 
