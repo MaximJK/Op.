@@ -9,7 +9,7 @@ export default (state = {}, action) => {
         obj[item.id] = item
         return obj
    }, {})
-   
+
     switch (action.type) {
         case FETCH_DRAFTS:
             return merge({}, {[action.payload.id]: arrayToObject(action.payload.data)});

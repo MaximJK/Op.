@@ -11,17 +11,17 @@ class OpsView extends React.Component {
     }
 
     componentDidMount() {
-        this.props
-        this.props.fetchDrafts(this.props.op).then(() => this.setState({draftsFetched: true}))
+        
+        this.props.fetchDrafts(this.props.opId).then(() => this.setState({draftsFetched: true}))
     }
    
     
     render() {
-         debugger
+         
         let drafts;
         if (this.state.draftsFetched === true) {
-       
-        drafts = Object.values(this.props.drafts[this.props.op]).map(draft => {
+        debugger
+        drafts = Object.values(this.props.drafts[this.props.opId]).map(draft => {
             let body;
             if (draft.body.length > 15) {
                 body = draft.body.slice(0,15) + '...'
@@ -33,7 +33,7 @@ class OpsView extends React.Component {
                     draft number {draft.version_num}
                     <br></br>
                     <div>
-                <Link to={`/ops/${this.props.op}/drafts/${draft.id}/`}>
+                <Link to={`/ops/${this.props.opId}/drafts/${draft.id}/`}>
                     {body}
                 </Link>
                     </div>

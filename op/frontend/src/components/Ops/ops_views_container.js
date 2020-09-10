@@ -4,10 +4,11 @@ import OpsView from './ops_view';
 
 
 const mapStateToProps = ({ auth, ops, drafts}, ownProps) => {
-
+    let opId = Number(ownProps.match.params.opsid)
     return {
         id: auth.id,
-        op: Number(ownProps.match.params.opsid),
+        opId: opId,
+        op: ops[opId],
         drafts: drafts
     }
 }

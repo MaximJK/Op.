@@ -12,7 +12,6 @@ export default (state = {}, action) => {
         case LOGOUT_USER:
             return {}
         case FETCH_USER:
-            console.log(action.payload)
             return merge({}, action.payload[0]);
         default :
             return state;
