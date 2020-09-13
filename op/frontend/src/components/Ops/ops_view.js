@@ -29,7 +29,7 @@ class OpsView extends React.Component {
                 body = draft.body
             };
             return (
-                <li key={draft}>
+                <li key={draft.body}>
                     draft number {draft.version_num}
                     <br></br>
                     <div>
