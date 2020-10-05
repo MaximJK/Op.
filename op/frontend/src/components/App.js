@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { Switch, Route, Link } from "react-router-dom";
 import login_container from "./auth/login_container";
 import signup_container from "./auth/signup_container";
-import HeaderContainer from './header/header_container'
-import OpsContainer from './ops/ops_index_container'
-import OpsView from './ops/ops_views_container'
-import DraftView from './drafts/draft_view_container'
-import DraftForm from './drafts/draft_form_container'
-import Splash from './splash/Splash'
+import HeaderContainer from './header/header_container';
+import OpsContainer from "./ops/ops_index_container";
+import OpsView from './ops/ops_views_container';
+import DraftView from './drafts/draft_view_container';
+import DraftForm from './drafts/draft_form_container';
+import Splash from './splash/Splash';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import {fetchUserById, logoutUser} from '../actions/auth'
+import {fetchUserById, logoutUser} from '../actions/auth';
 
 // css import
 import '../../static/frontend/style/style.scss';
