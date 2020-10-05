@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "13.10.1"
-  }
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "test",
