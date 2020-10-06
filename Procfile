@@ -1,1 +1,1 @@
-web: gunicorn op.v2
+web: gunicorn op.wsgi:application --log-file -
