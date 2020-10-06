@@ -1,1 +1,1 @@
-web: gunicorn op
+web: gunicorn op. v2
