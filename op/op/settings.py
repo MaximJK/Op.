@@ -15,9 +15,9 @@ import django_heroku
 import os
 from datetime import timedelta
 
-import sys
-print(sys.version)
-print(sys.path)
+# import sys
+# print(sys.version)
+# print(sys.path)
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't&(-^ck*i5z&os@c7=vn1p7paci7mr*i_n$hmx%@hq^&%@$^4='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
