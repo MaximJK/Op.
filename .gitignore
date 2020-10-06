@@ -65,7 +65,7 @@ health_check_storage_test/
 
 # Django stuff:
 *.log
-local_settings.py
+# local_settings.py
 
 # Flask stuff:
 instance/
