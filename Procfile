@@ -1,1 +1,1 @@
-web: gunicorn op.op.wsgi
+web: gunicorn op.wsgi:op
