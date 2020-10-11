@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'opv2',
-        'HOST': 'localhost',
+        'HOST': 'opusv.herokuapp.com',
         'PORT': ''
     }
 }
