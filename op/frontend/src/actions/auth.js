@@ -1,5 +1,6 @@
 import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from './action_types'
 import axiosInstance from "./axiosApi";
+import store from '../store';
 
 export const loginUser = state => dispatch => (
     axiosInstance.post('/token/obtain/', {
@@ -26,10 +27,13 @@ export const loginUser = state => dispatch => (
       axiosInstance.get(`/user/?username=${state.username}`, {
         
     }).then(response => {
+      dispatch({type: 'LOG_IN'});
       return dispatch({
         type: FETCH_USER,
         payload: response.data
+        
     })
+    
   })
 );
   export const signUpUser = state => dispatch => (
@@ -61,6 +65,9 @@ export const logoutUser = () => dispatch => (
       localStorage.removeItem('access_token');
       localStorage.removeItem('refresh_token');
       axiosInstance.defaults.headers['Authorization'] = null;
+  }).then(response => {
+    console.log(response);
+    return dispatch({type: 'LOG_OUT'})
   })
 );
 
