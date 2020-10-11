@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'opv2',
-        'HOST': 'opusv.herokuapp.com',
+        'HOST': 'local host',
         'PORT': ''
     }
 }
@@ -171,4 +171,4 @@ SIMPLE_JWT = {
 
 django_heroku.settings(locals())
 import dj_database_url
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
