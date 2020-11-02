@@ -135,8 +135,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/op/static/'
 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATICFILES_DIRS = ( 
      os.path.join(BASE_DIR, "static"), 
 )
@@ -210,6 +212,6 @@ LOGGING = {
 }
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
