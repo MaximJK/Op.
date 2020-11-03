@@ -33,7 +33,7 @@ SECRET_KEY = 'xxxxxxxxxxxx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["opusv.herokuapp.com"]
 
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
