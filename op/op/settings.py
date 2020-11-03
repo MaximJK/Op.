@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't&(-^ck*i5z&os@c7=vn1p7paci7mr*i_n$hmx%@hq^&%@$^4='
+SECRET_KEY = 'xxxxxxxxxxxx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -139,12 +139,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
 STATICFILES_DIRS = ( 
-     os.path.join(BASE_DIR, "static"), 
+     os.path.join(PROJECT_DIR, "static"), 
 )
-# Custom user model
 
+# Custom user model
+xs
 AUTH_USER_MODEL = "authentication.CustomUser"
 
 # Rest Framework
