@@ -145,7 +145,6 @@ STATICFILES_DIRS = (
 )
 
 # Custom user model
-xs
 AUTH_USER_MODEL = "authentication.CustomUser"
 
 # Rest Framework
