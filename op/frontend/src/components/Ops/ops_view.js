@@ -20,7 +20,7 @@ class OpsView extends React.Component {
          
         let drafts;
         if (this.state.draftsFetched === true) {
-        debugger
+        
         drafts = Object.values(this.props.drafts[this.props.opId]).map(draft => {
             let body;
             if (draft.body.length > 15) {

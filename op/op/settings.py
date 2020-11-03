@@ -33,10 +33,10 @@ SECRET_KEY = 'xxxxxxxxxxxx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["opusv.herokuapp.com"]
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1:8000', 'localhost','opusv.herokuapp.com' ]
 
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
+COLLECTSTATIC = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -179,36 +179,30 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
-                       'pathname=%(pathname)s lineno=%(lineno)s '
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
         },
         'simple': {
             'format': '%(levelname)s %(message)s'
-        }
+        },
     },
     'handlers': {
-        'null': {
+        'file': {
             'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
+            'class': 'logging.FileHandler',
+            'filename': 'mysite.log',
             'formatter': 'verbose'
-        }
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
+            'handlers':['file'],
             'propagate': True,
+            'level':'DEBUG',
         },
-        'django.request': {
-            'handlers': ['console'],
+        'MYAPP': {
+            'handlers': ['file'],
             'level': 'DEBUG',
-            'propagate': False,
         },
     }
 }

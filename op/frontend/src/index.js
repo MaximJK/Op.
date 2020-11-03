@@ -10,9 +10,9 @@ import {fetchOps} from './actions/ops';
 import axiosInstance from './actions/axiosApi'
 
 let refresh = window.localStorage.getItem('refresh_token');
-debugger
+
 if (refresh !== undefined && refresh !== null) {
-    debugger
+    
     let decoded = jwt_decode(refresh);
     store.dispatch(fetchUserById(decoded.user_id));
     store.dispatch({type: 'LOG_IN'});

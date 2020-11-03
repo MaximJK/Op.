@@ -1,0 +1,33 @@
+#site.dark > header {
+    background: #0a0de6;
+}
+#header {
+    background: #f5ecd4;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 7px 0px #000000;
+}
+.loginHeader {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 1vh;
+}
+#login{
+    margin: 1vh
+}
+
+#signup{
+    margin: 1vh
+}
+#logout{
+    margin: 1vh
+}  
+.modeIcon{
+    margin: 1vh
+}
+#headerLogo {
+    width: 18vh;
+    height: 10vh;
+}
