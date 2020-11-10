@@ -91,11 +91,19 @@ WSGI_APPLICATION = 'op.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'opv2',
+    #     'HOST': 'local host',
+    #     'PORT': ''
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'opv2',
-        'HOST': 'local host',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'opv2',                     
+        # 'USER': 'your_heroku_db_user_name',
+        # 'PASSWORD': 'your_heroku_password',
+        'HOST': 'ec2-107-22-241-205.compute-1.amazonaws.com', # Or something like this
+        'PORT': '5432',                     
     }
 }
 
