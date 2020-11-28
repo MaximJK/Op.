@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-
-const baseURL = 'https://opusv.herokuapp.com/api/'
+// dev api
+const baseURL = 'http://127.0.0.1:8000/api/'
+// prod api
+// const baseURL = 'https://opusv.herokuapp.com/api/'
 const axiosInstance = axios.create({
     baseURL: baseURL,
     // if not returned in x miliseconds request is aborted.

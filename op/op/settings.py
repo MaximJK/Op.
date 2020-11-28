@@ -35,7 +35,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1:8000', 'localhost','opusv.herokuapp.com' ]
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 COLLECTSTATIC = 1
 # Application definition
 
@@ -94,7 +94,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'opv2',
-        'HOST': 'local host',
+        'HOST': 'localhost',
         'PORT': ''
     },
     # 'default': {
