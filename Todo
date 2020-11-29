@@ -6,7 +6,11 @@ Next Step:
             comments info sections
             grid layout new header
             new dark mode
-
+        views:
+            draft views
+            create op popup
+            commenting interface 
+            
 Future Slices:
     -social:
         -user profile & public page

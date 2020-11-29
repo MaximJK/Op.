@@ -21,4 +21,10 @@ class DraftViewset(viewsets.ModelViewSet):
     
     queryset = models.Draft.objects.all()
     serializer_class = serializers.DraftSerializer
-    filterset_fields = {'op'}
+    filterset_fields = {'op',}
+
+class CommentViewset(viewsets.ModelViewSet):
+
+        queryset = models.Comment.objects.all()
+        serializer_class = serializers.CommentSerializer
+        filterset_fields = {'id', 'body', 'drafts' }
