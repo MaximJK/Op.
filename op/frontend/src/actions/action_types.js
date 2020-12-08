@@ -9,6 +9,7 @@ export const FETCH_OP = 'FETCH_OP';
 export const CREATE_OP = 'CREATE_OP';
 export const DELETE_OP = 'DELETE_OP';
 export const PATCH_OP = 'PATCH_OP';
+export const SELECT_OP = 'SELECT_OP'
 
 export const CREATE_DRAFT = 'CREATE_DRAFT';
 export const PATCH_DRAFT = 'PATCH_DRAFT';

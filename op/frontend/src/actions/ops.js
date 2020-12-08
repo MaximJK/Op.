@@ -1,4 +1,5 @@
-import { FETCH_OPS,FETCH_OP, CREATE_OP, DELETE_OP, PATCH_OP } from './action_types'
+import { FETCH_OPS,FETCH_OP, CREATE_OP, DELETE_OP, 
+    PATCH_OP, SELECT_OP } from './action_types'
 import axiosInstance from "./axiosApi";
 
 export const fetchOps = id => dispatch => (
@@ -12,6 +13,7 @@ export const fetchOps = id => dispatch => (
         });
     })
 );
+
 
 export const fetchOp = id => dispatch => (
     axiosInstance.get('/ops/', {

@@ -6,6 +6,7 @@ import draftReducer from './draft_reducer';
 import opModalReducer from './op_modal_reducer';
 import modeReducer from './dmode_reducer';
 import sessionReducer from './session_reducer';
+import opSelect from './select_op'
 
 export default combineReducers({
   auth: authReducer,
@@ -13,6 +14,7 @@ export default combineReducers({
   drafts: draftReducer,
   modal: opModalReducer,
   dmode: modeReducer,
-  session: sessionReducer
+  session: sessionReducer,
+  opSelect: opSelect
   
 });

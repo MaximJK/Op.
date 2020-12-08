@@ -15,7 +15,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
         createDraft: draft => dispatch(createDraft(draft)),
-        updateDraft: draft => dispatch(updateDraft(draft))
+        updateDraft: draft => dispatch(updateDraft(draft)),
+        
     }
 }
 

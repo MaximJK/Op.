@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import OpColumn from './op_column';
 import {fetchOps,deleteOp  } from '../../actions/ops';
 import {modalOn, modalOff} from '../../actions/modal';
+import {selectOp} from '../../actions/select_op';
+
 
 const mapStateToProps = ({auth, ops, modal}) => {
     
@@ -17,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchOps:(id) => dispatch(fetchOps(id)),
     deleteOp:(id) => dispatch(deleteOp(id)),
     modalOn:() => dispatch(modalOn()),
-    modalOff:() => dispatch(modalOff())
+    modalOff:() => dispatch(modalOff()),
+    selectOp:(op) => dispatch(selectOp(op))
 }}
 
 export default connect(
