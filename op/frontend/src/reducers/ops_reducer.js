@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { FETCH_OPS, DELETE_OP, CREATE_OP, PATCH_OP, SELECT_OP} from '../actions/action_types';
+import { FETCH_OPS, DELETE_OP, CREATE_OP, PATCH_OP} from '../actions/action_types';
 
 
 export default (state = {}, action) => {
@@ -32,8 +32,6 @@ export default (state = {}, action) => {
            return newState
         default :
             return state;
-
-        case SELECT_OP:
             
 
     }}

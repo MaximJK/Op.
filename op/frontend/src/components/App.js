@@ -28,15 +28,7 @@ class App extends Component {
         
     }
 
-    componentDidMount() {
-        // let refresh = window.localStorage.getItem('refresh_token')
-        // if (refresh !== undefined) {
-        //     let decoded = jwt_decode(refresh)
-        //     
 
-        //     this.props.fetchUserById(decoded.user_id)
-        // }
-    }
     
     render() {
         

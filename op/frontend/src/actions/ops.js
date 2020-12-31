@@ -1,6 +1,6 @@
 import { FETCH_OPS,FETCH_OP, CREATE_OP, DELETE_OP, 
     PATCH_OP, SELECT_OP } from './action_types'
-import axiosInstance from "./axiosApi";
+import axiosInstance from "./axios_api";
 
 export const fetchOps = id => dispatch => (
     axiosInstance.get('/ops/', {

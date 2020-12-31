@@ -8,7 +8,7 @@ export default (state = {}, action) => {
             
         //     return merge({}, {'username': action.payload});
         case SELECT_OP:
-            return action.data
+            return action.payload
         default:
             return state
         

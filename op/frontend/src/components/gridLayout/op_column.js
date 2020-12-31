@@ -67,10 +67,11 @@ class OpColumn extends React.Component {
       return(
         <div>
         <OpsLi
-        key={op.title}
-        id={op.id}
+        key={op.id}
+        id={op.id}x
         title={op.title}
         drafts={op.draft}
+        selectOp={this.props.selectOp}
         />
         <button onClick={() => {{this.editOp(op)}}}>edit op</button>
         <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button>

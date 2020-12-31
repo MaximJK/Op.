@@ -1,5 +1,5 @@
 import { FETCH_DRAFTS, CREATE_DRAFT, DELETE_DRAFT, PATCH_DRAFT } from './action_types'
-import axiosInstance from "./axiosApi";
+import axiosInstance from "./axios_api";
 
 export const fetchDrafts = id => dispatch => (
     axiosInstance.get('/draft/', {

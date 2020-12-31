@@ -1,5 +1,5 @@
 import { LOGIN_USER, SIGNUP_USER, LOGOUT_USER, FETCH_USER } from './action_types'
-import axiosInstance from "./axiosApi";
+import axiosInstance from "./axios_api";
 import store from '../store';
 
 export const loginUser = state => dispatch => (

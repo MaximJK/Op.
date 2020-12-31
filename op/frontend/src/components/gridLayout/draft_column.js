@@ -1,17 +1,15 @@
 import React from 'react';
 
-class Grid extends React.Component {
+class DraftColumn extends React.Component {
 
 
 
     render(){
+        
         return (
-            <grid>
-                {/* op column
-                draft column
-                main canvas
-                info bar */}
-            </grid>
+            <ul>
+
+            </ul>
         )
     }
 }
