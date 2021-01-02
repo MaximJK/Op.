@@ -23,7 +23,7 @@ class Signup extends Component{
         event.preventDefault();
         
         try {
-            this.props.signUpUser(this.state).then(() =>  this.props.history.push("/ops/"));
+            this.props.signUpUser(this.state).then(() => this.props.logIn()).then(() =>  this.props.history.push("/ops/"));
         } catch (error) {
             throw error
         }

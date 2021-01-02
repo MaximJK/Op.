@@ -12,13 +12,19 @@ import {fetchOps} from './actions/ops';
 let refresh = window.localStorage.getItem('refresh_token');
 
 if (refresh !== undefined && refresh !== null) {
-    
     let decoded = jwt_decode(refresh);
-    store.dispatch(fetchUserById(decoded.user_id));
-
-
-    store.dispatch({type: 'LOG_IN'});
-    store.dispatch(fetchOps(decoded.user_id));
+    try {
+        store.dispatch({type: 'LOG_IN'});
+        store.dispatch(fetchUserById(decoded.user_id));
+    } catch (error) {
+    console.error(error);
+    store.dispatch({type: 'LOG_OUT'})
+    }
+    
+    
+    // store.dispatch({type: 'LOG_IN'});
+    // store.dispatch(fetchUserById(decoded.user_id));
+    // store.dispatch(fetchOps(decoded.user_id));
 } else (
     store.dispatch({type: 'LOG_OUT'})
 )

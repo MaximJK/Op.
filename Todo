@@ -1,4 +1,5 @@
 Next Step:
+    redo auth: guard views using axios interceptor instead of redux state
     realize wire frame:
         X Implement comments
         new Ui:

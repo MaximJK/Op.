@@ -27,7 +27,7 @@ export const loginUser = state => dispatch => (
       axiosInstance.get(`/user/?username=${state.username}`, {
         
     }).then(response => {
-      dispatch({type: 'LOG_IN'});
+      // dispatch({type: 'LOG_IN'});
       return dispatch({
         type: FETCH_USER,
         payload: response.data

@@ -1,25 +1,26 @@
 import { connect } from 'react-redux';
-
-import {fetchOps,deleteOp  } from '../../actions/ops';
+import OpColumn from './op_column';
+import {fetchDrafts} from '../../actions/drafts';
 import {modalOn, modalOff} from '../../actions/modal';
 import {selectOp} from '../../actions/select_op';
 
 
-const mapStateToProps = (state) => {
-    // if (state.selec)
+const mapStateToProps = ({auth, ops, modal}) => {
+    
     return {
-        selected_ops: op,
-        
+        // id: op.id,
+        // ops: ops,
+        // modal: modal
     }
 }
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    fetchOps:(id) => dispatch(fetchOps(id)),
-   
+    fetchDrafts:(id) => dispatch(fetchDrafts(id)),
+    
 }}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Grid);
+)(OpColumn);

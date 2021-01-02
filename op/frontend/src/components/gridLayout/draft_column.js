@@ -2,10 +2,12 @@ import React from 'react';
 
 class DraftColumn extends React.Component {
 
-
+    componentDidMount() {
+        this.props.fetchDrafts(this.props.op)
+    }
 
     render(){
-        
+
         return (
             <ul>
 
@@ -14,4 +16,4 @@ class DraftColumn extends React.Component {
     }
 }
 
-export default withRouter(Grid)
+export default withRouter(DraftColumn)

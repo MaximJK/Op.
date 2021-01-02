@@ -19,8 +19,10 @@ class OpColumn extends React.Component {
   };
 
   }
-  componentDidMount() {
-    this.props.fetchOps(this.props.id)
+  componentDidUpdate(prevProps) { 
+    if (this.props.id !== prevProps.id) {
+    this.props.fetchOps(this.props.id);
+    }
 }
  
   editOp(op) {
@@ -67,8 +69,8 @@ class OpColumn extends React.Component {
       return(
         <div>
         <OpsLi
-        key={op.id}
-        id={op.id}x
+        key={op.title}
+        id={op.id}
         title={op.title}
         drafts={op.draft}
         selectOp={this.props.selectOp}
