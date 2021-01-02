@@ -15,6 +15,6 @@ export default combineReducers({
   modal: opModalReducer,
   dmode: modeReducer,
   session: sessionReducer,
-  opSelect: opSelect
+  selected: opSelect
   
 });

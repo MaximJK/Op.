@@ -5,12 +5,14 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 class Grid extends React.Component {
+    
 
     render(){
+        // debugger
         return (
             <div className='grid' >
-                <OpColumnContainer/>
-                <DraftColumnContainer/>
+                <OpColumnContainer selected={this.props.selected}/>
+                <DraftColumnContainer selected={this.props.selected}/>
                 <div>op canvas</div>
                 <div>op column</div>
 

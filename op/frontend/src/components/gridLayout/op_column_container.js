@@ -5,12 +5,13 @@ import {modalOn, modalOff} from '../../actions/modal';
 import {selectOp} from '../../actions/select_op';
 
 
-const mapStateToProps = ({auth, ops, modal}) => {
+const mapStateToProps = ({auth, ops, modal},ownProps) => {
     
     return {
         id: auth.id,
         ops: ops,
-        modal: modal
+        modal: modal,
+        selected: ownProps.selected
     }
 }
 const mapDispatchToProps = (dispatch) => {

@@ -19,11 +19,7 @@ class OpColumn extends React.Component {
   };
 
   }
-  componentDidUpdate(prevProps) { 
-    if (this.props.id !== prevProps.id) {
-    this.props.fetchOps(this.props.id);
-    }
-}
+  
  
   editOp(op) {
     this.setState(
@@ -50,6 +46,11 @@ class OpColumn extends React.Component {
     )
     this.props.modalOn();
   }
+  componentDidUpdate(prevProps) { 
+    if (this.props.id !== prevProps.id) {
+    this.props.fetchOps(this.props.id);
+    }
+}
 
   modalClick(event) {
     event.preventDefault();
@@ -66,6 +67,12 @@ class OpColumn extends React.Component {
     
     if (this.props.ops && Object.keys(this.props.ops).length !== 0) {
       ops = Object.values(this.props.ops).map(op => {
+        let selected
+        if (op.id === this.props.selected) {
+          selected = true
+        } 
+        else {selected = false};
+
       return(
         <div>
         <OpsLi
@@ -74,6 +81,7 @@ class OpColumn extends React.Component {
         title={op.title}
         drafts={op.draft}
         selectOp={this.props.selectOp}
+        isSelected = {selected}
         />
         <button onClick={() => {{this.editOp(op)}}}>edit op</button>
         <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button>

@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import { connect } from 'react-redux';
 import { Switch, Route, Link } from "react-router-dom";
 
-import Grid from './gridLayout/grid';
+import Grid from './gridLayout/grid_container';
 import login_container from "./auth/login_container";
 import signup_container from "./auth/signup_container";
 import HeaderContainer from './header/header_container';

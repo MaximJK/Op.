@@ -2,8 +2,11 @@ import React from 'react';
 
 class DraftColumn extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchDrafts(this.props.op)
+    componentDidUpdate(prevProps) { 
+        debugger
+        if (this.props.selected !== prevProps.selected) {
+        this.props.fetchDrafts(this.props.selected);
+        }
     }
 
     render(){
@@ -16,4 +19,4 @@ class DraftColumn extends React.Component {
     }
 }
 
-export default withRouter(DraftColumn)
+export default DraftColumn;
