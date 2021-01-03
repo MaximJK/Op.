@@ -15,6 +15,7 @@ if (refresh !== undefined && refresh !== null) {
     let decoded = jwt_decode(refresh);
     try {
         store.dispatch({type: 'LOG_IN'});
+        debugger
         store.dispatch(fetchUserById(decoded.user_id));
     } catch (error) {
     console.error(error);

@@ -4,7 +4,8 @@ import reduxThunk from 'redux-thunk';
 import rootReducer from './reducers/root_reducer';
 import logger from 'redux-logger';
 const initialState = { 
-  selected: 'none'
+  selected: 'none',
+  drafts: 'empty'
 };
 
 

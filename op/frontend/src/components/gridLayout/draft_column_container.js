@@ -6,7 +6,7 @@ import {selectOp} from '../../actions/select_op';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     return {
         selected: ownProps.selected,
         drafts: state.drafts
