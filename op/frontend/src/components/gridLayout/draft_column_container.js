@@ -6,9 +6,10 @@ import {selectOp} from '../../actions/select_op';
 
 
 const mapStateToProps = (state, ownProps) => {
-    
+    debugger
+    let opId = Number(ownProps.match.params.opid)
     return {
-        selected: ownProps.selected,
+        selected: opId,
         drafts: state.drafts
     }
 }

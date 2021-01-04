@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import OpsLi from '../ops/ops_li';
 import OpsForm from '../ops/ops_form_container';
 import { MODAL_ON } from "../../actions/action_types";
 import Popup from 'reactjs-popup';
+import { Link, withRouter } from 'react-router-dom';
 
 class OpColumn extends React.Component {
   constructor(props) {
@@ -50,7 +50,11 @@ class OpColumn extends React.Component {
     if (this.props.id !== prevProps.id) {
     this.props.fetchOps(this.props.id);
     }
+    
 }
+  componentDidMount(){
+    this.props.fetchOps(this.props.id);
+  }
 
   modalClick(event) {
     event.preventDefault();
@@ -83,8 +87,8 @@ class OpColumn extends React.Component {
         selectOp={this.props.selectOp}
         isSelected = {selected}
         />
-        <button onClick={() => {{this.editOp(op)}}}>edit op</button>
-        <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button>
+        {/* <button onClick={() => {{this.editOp(op)}}}>edit op</button>
+        <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button> */}
         </div>
       );
     })}
@@ -126,4 +130,4 @@ class OpColumn extends React.Component {
   };
 }
 
-export default OpColumn;
+export default withRouter(OpColumn);

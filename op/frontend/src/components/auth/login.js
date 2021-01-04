@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, history} from 'react-router-dom';
 import { loginUser } from "../../actions/auth";
 
 class Login extends Component {

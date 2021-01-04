@@ -6,10 +6,12 @@ import {selectOp} from '../../actions/select_op';
 import { zip } from 'lodash';
 
 
-const mapStateToProps = (state) => {
-    // if (state.selec)
+const mapStateToProps = (state, ownProps) => {
+    
+    
     return {
-        selected: state.selected,
+        
+        selected: ownProps.selected,
         
     }
 }
