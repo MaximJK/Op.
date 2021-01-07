@@ -1,19 +1,32 @@
 import React from 'react';
 
-class Grid extends React.Component {
+class Sidebar extends React.Component {
 
 
 
     render(){
+        let drafts = <div></div>
+        if (this.props.drafts != 'empty' && this.props.selected != 'none') {
+            drafts = Object.values(this.props.drafts[this.props.selected])
+            .map(draft => {
+                
+                return (
+                        <div key={draft.id}>
+                            
+                            
+                            {draft.version_num}
+                            {draft.notes}
+                            </div>
+                )
+            })
+
+        }
         return (
-            <grid>
-                {/* op column
-                draft column
-                main canvas
-                info bar */}
-            </grid>
+            <div>
+                 {drafts}
+            </div>
         )
     }
 }
 
-export default withRouter(Grid)
+export default Sidebar

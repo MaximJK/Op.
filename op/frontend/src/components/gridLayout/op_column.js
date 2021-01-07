@@ -58,8 +58,6 @@ class OpColumn extends React.Component {
 
   modalClick(event) {
     event.preventDefault();
-    console.log(event.currentTarget.id)
-    console.log(event.currentTarget)
     if (event.currentTarget.id === 'OpsModal') {
       this.props.modalOff();
     };
@@ -69,7 +67,7 @@ class OpColumn extends React.Component {
     
     let ops;
     
-    if (this.props.ops && Object.keys(this.props.ops).length !== 0) {
+    if (this.props.ops !== 'empty') {
       ops = Object.values(this.props.ops).map(op => {
         let selected
         if (op.id === this.props.selected) {
@@ -80,7 +78,7 @@ class OpColumn extends React.Component {
       return(
         <div>
         <OpsLi
-        key={op.title}
+        key={op.id}
         id={op.id}
         title={op.title}
         drafts={op.draft}

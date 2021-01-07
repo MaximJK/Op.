@@ -25,7 +25,8 @@ class DraftColumn extends React.Component {
                         body = draft.body
                     }
                 return (
-                        <li>
+                        <li key={draft.id}>
+                            
                             {body}
                             {draft.version_num}
                             {draft.notes}

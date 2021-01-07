@@ -20,14 +20,13 @@ if (refresh !== undefined && refresh !== null) {
     console.error(error);
     store.dispatch({type: 'LOG_OUT'})
     }
-    
-    
     // store.dispatch({type: 'LOG_IN'});
     // store.dispatch(fetchUserById(decoded.user_id));
     // store.dispatch(fetchOps(decoded.user_id));
-} else (
-    store.dispatch({type: 'LOG_OUT'})
-)
+} 
+// else (
+//     store.dispatch({type: 'LOG_OUT'})
+// )
 
 render((
     <Provider store={store}>
