@@ -7,7 +7,7 @@ import Sidebar from './sidebar';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
 
     return {
         selected: state.selected,
@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    fetchDrafts:(id) => dispatch(fetchDrafts(id)),
     
 }}
 

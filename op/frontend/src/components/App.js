@@ -45,10 +45,10 @@ class App extends Component {
                 <main>
 
                     <Switch>
-                        <AuthRoute exact path={"/"} component={Splash}/>
-                        <AuthRoute exact path={"/login/"} component={login_container}/>
-                        <AuthRoute exact path={"/signup/"} component={signup_container}/>
-                        <ProtectedRoute path={'/ops/'} component={Grid}/>
+                        <Route exact path={"/"} component={Splash}/>
+                        <Route exact path={"/login/"} component={login_container}/>
+                        <Route exact path={"/signup/"} component={signup_container}/>
+                        <Route path={'/ops/'} component={Grid}/>
                        
                     </Switch>
                 </main>

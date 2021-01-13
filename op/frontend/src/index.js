@@ -9,21 +9,18 @@ import {loginUser, fetchUserById} from "./actions/auth"
 import {fetchOps} from './actions/ops';
 
 
-let refresh = window.localStorage.getItem('refresh_token');
+// let refresh = window.localStorage.getItem('refresh_token');
 
-if (refresh !== undefined && refresh !== null) {
-    let decoded = jwt_decode(refresh);
-    try {
-        store.dispatch({type: 'LOG_IN'});
-        store.dispatch(fetchUserById(decoded.user_id));
-    } catch (error) {
-    console.error(error);
-    store.dispatch({type: 'LOG_OUT'})
-    }
-    // store.dispatch({type: 'LOG_IN'});
-    // store.dispatch(fetchUserById(decoded.user_id));
-    // store.dispatch(fetchOps(decoded.user_id));
-} 
+// if (refresh !== undefined && refresh !== null) {
+//     let decoded = jwt_decode(refresh);
+//     try {
+//         // store.dispatch({type: 'LOG_IN'});
+//         store.dispatch(fetchUserById(decoded.user_id));
+//     } catch (error) {
+//     console.error(error);
+//     store.dispatch({type: 'LOG_OUT'})
+//     }
+// } 
 // else (
 //     store.dispatch({type: 'LOG_OUT'})
 // )

@@ -15,6 +15,7 @@ class Sidebar extends React.Component {
                             
                             
                             {draft.version_num}
+                            <br/>
                             {draft.notes}
                             </div>
                 )
@@ -23,6 +24,7 @@ class Sidebar extends React.Component {
         }
         return (
             <div>
+                
                  {drafts}
             </div>
         )

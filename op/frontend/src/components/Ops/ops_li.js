@@ -19,7 +19,7 @@ const OpsLi = (props) => {
 
     return (
         <div onClick={() => {{props.selectOp(props.id)}}}>
-            <Link to={'/ops/' + `${props.id}`}>
+            <Link to={'/ops/' + `${props.id}` + '/'}>
         {title}
         </Link>
         {/* number of drafts:{drafts.length} */}

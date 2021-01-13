@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class DraftColumn extends React.Component {
 
     componentDidUpdate(prevProps) { 
-        debugger
+        
         if (this.props.selected !== prevProps.selected) {
         this.props.fetchDrafts(this.props.selected);
         }
@@ -24,12 +24,14 @@ class DraftColumn extends React.Component {
                     } else {
                         body = draft.body
                     }
+
+
                 return (
                         <li key={draft.id}>
-                            
+                            <Link to={'/ops/' +  `${this.props.selected}` + '/' + `${draft.id}`}>
                             {body}
-                            {draft.version_num}
-                            {draft.notes}
+                            
+                            </Link>
                             </li>
                 )
             })

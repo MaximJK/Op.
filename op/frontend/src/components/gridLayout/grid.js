@@ -11,12 +11,12 @@ class Grid extends React.Component {
     
 
     render(){
-        // debugger
+        
         return (
             <div className='grid' >
                 <OpColumnContainer selected={this.props.selected}/>
                 <Switch>
-                <ProtectedRoute path={'/ops/:opid'} component={DraftColumnContainer}/>
+                <Route path={'/ops/:opid/:draftid?'} component={DraftColumnContainer}/>
                 </Switch>
                 <div>op canvas</div>
                 <Sidebar/>

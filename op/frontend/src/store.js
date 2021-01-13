@@ -6,7 +6,8 @@ import logger from 'redux-logger';
 const initialState = { 
   ops: 'empty',
   selected: 'none',
-  drafts: 'empty'
+  drafts: 'empty',
+  session: true
 };
 
 
