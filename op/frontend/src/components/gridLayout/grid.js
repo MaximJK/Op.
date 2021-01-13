@@ -16,7 +16,7 @@ class Grid extends React.Component {
             <div className='grid' >
                 <OpColumnContainer selected={this.props.selected}/>
                 <Switch>
-                <Route path={'/ops/:opid/:draftid?'} component={DraftColumnContainer}/>
+                <Route path={'/ops/:opid?/:draftid?'} component={DraftColumnContainer}/>
                 </Switch>
                 <div>op canvas</div>
                 <Sidebar/>

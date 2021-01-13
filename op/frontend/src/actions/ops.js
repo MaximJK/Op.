@@ -3,9 +3,7 @@ import { FETCH_OPS,FETCH_OP, CREATE_OP, DELETE_OP,
 import axiosInstance from "./axios_api";
 
 export const fetchOps = id => dispatch => (
-    axiosInstance.get('/ops/', {
-        authors: id
-    })
+    axiosInstance.get(`/ops/?authors=${id}`)
     .then(response => {
         return dispatch({
         type: FETCH_OPS,

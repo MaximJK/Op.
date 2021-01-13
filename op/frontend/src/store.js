@@ -7,7 +7,8 @@ const initialState = {
   ops: 'empty',
   selected: 'none',
   drafts: 'empty',
-  session: true
+  session: true,
+  auth:'none'
 };
 
 
