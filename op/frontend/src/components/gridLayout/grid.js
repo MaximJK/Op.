@@ -1,6 +1,7 @@
 import React from 'react';
 import OpColumnContainer from './op_column_container';
 import DraftColumnContainer from './draft_column_container';
+import OpCanvasContainer from './op_canvas_container';
 import { Switch, Route, Link, withRouter } from "react-router-dom";
 import { ProtectedRoute } from '../../util/route_util';
 import Sidebar from './sidebar_container';
@@ -18,7 +19,9 @@ class Grid extends React.Component {
                 <Switch>
                 <Route path={'/ops/:opid?/:draftid?'} component={DraftColumnContainer}/>
                 </Switch>
-                <div>op canvas</div>
+                <Switch>
+                <Route path={'/ops/:opid?/:draftid?'} component={OpCanvasContainer}/>
+                </Switch>
                 <Sidebar/>
 
                 {/*

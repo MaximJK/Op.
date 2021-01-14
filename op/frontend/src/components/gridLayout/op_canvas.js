@@ -1,20 +1,27 @@
 import React from 'react';
 import draft_reducer from '../../reducers/draft_reducer';
 import { Link, withRouter } from 'react-router-dom';
-class DraftColumn extends React.Component {
+
+class OpCanvas extends React.Component {
+
 
 
     render(){
-        let draft = <div>Select a Draft</div>
-        if (this.props.draft ==! 'empty') {
-        }
+        let draft = 'choose a draft'
+        if (this.props.drafts != 'empty' && this.props.selected != 'none' && this.props.selectedDraft) {
+                draft = this.props.drafts[this.props.selected][this.props.selectedDraft]['body']
+                
+            }
 
-        let draft 
+        
         return (
-           {draft}
+            <div>
+                
+                 {draft}
+            </div>
         )
     }
 
 }
 
-export default withRouter(DraftColumn);
+export default withRouter(OpCanvas);

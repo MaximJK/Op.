@@ -15,7 +15,7 @@ class DraftColumn extends React.Component {
     }
     render(){
         let drafts = <li> select an Op.</li>
-        if (this.props.drafts != 'empty') {
+        if (this.props.drafts != 'empty' && this.props.selected != 'none') {
             drafts = Object.values(this.props.drafts[this.props.selected])
             .map(draft => {
                 let body
@@ -24,7 +24,6 @@ class DraftColumn extends React.Component {
                     } else {
                         body = draft.body
                     }
-
 
                 return (
                         <li key={draft.id}>

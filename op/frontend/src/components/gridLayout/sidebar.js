@@ -7,18 +7,15 @@ class Sidebar extends React.Component {
     render(){
         let drafts = <div></div>
         if (this.props.drafts != 'empty' && this.props.selected != 'none') {
-            drafts = Object.values(this.props.drafts[this.props.selected])
-            .map(draft => {
+                drafts = Object.values(this.props.drafts[this.props.selected])
+                .map(draft => {
                 
                 return (
                         <div key={draft.id}>
-                            
-                            
-                            {draft.version_num}
-                            <br/>
-                            {draft.notes}
+                            {draft.body}
                             </div>
                 )
+                            
             })
 
         }

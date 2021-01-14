@@ -85,8 +85,7 @@ class OpColumn extends React.Component {
         selectOp={this.props.selectOp}
         isSelected = {selected}
         />
-        {/* <button onClick={() => {{this.editOp(op)}}}>edit op</button>
-        <button onClick={() => {{this.props.deleteOp(op.id)}}}>delete op</button> */}
+
         </div>
       );
     })}
