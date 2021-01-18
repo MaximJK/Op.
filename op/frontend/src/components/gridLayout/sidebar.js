@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
 
         }
         return (
-            <div>
+            <div className='sidebar'>
                 
                  {drafts}
             </div>

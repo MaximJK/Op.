@@ -76,7 +76,7 @@ class OpColumn extends React.Component {
         else {selected = false};
 
       return(
-        <div>
+        <div className='opColumn'>
         <OpsLi
         key={op.id}
         id={op.id}

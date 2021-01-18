@@ -37,9 +37,11 @@ class DraftColumn extends React.Component {
 
         }
         return (
-            <ul>
-                {drafts}
-            </ul>
+            <div className='draftColumn'>
+                <ul>
+                    {drafts}
+                </ul>
+            </div>
         )
     }
 }
