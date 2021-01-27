@@ -3,11 +3,12 @@
 }
 #header {
     background: #f5ecd4;
-    height: 10vh;
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     box-shadow: 1px 1px 7px 0px #000000;
     position: relative;
+    z-index: 2;
 }
 .loginHeader {
     display: flex;
@@ -29,6 +30,6 @@
     margin: 1vh
 }
 #headerLogo {
-    width: 18vh;
-    height: 10vh;
+    // width: 18vh;
+    height: 8vh;
 }

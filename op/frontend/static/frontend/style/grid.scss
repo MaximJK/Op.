@@ -1,7 +1,10 @@
 .grid{
-    display: grid;
-    grid-template-columns: 10% 10% 1fr 20%;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 10% 10% 1fr 20%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position:fixed;
 }
 .opColumn{
   background-color: #EBF6F7;
@@ -9,14 +12,14 @@
 }
 
 .draftColumn{
-  background: #86ABA5;
+  background: #edf8f1;
   border-right: 1px solid #1B294B;
 }
 
 .sidebar{
-  background: #89729E;
+  background: #f3ebf7;
   border-left: 1px solid #1B294B;
 }
 .opCanvas{
-    
+    background: #fbfbfb;
 }

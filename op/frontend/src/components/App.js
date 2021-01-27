@@ -15,12 +15,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {fetchUserById, logoutUser} from '../actions/auth';
 
 // scss imports
-import '../../static/frontend/style/style.scss';
-import '../../static/frontend/style/header.scss';
-import '../../static/frontend/style/auth.scss';
-import '../../static/frontend/style/ops.scss';
-import '../../static/frontend/style/grid.scss';
-
+// import '../../static/frontend/style/style.scss';
+// import '../../static/frontend/style/header.scss';
+// import '../../static/frontend/style/auth.scss';
+// import '../../static/frontend/style/ops.scss';
+// import '../../static/frontend/style/grid.scss';
+// import '../../static/frontend/style/opColumn.scss'
+import '../../static/frontend/style/cssExport.scss'
 class App extends Component {
 
     constructor() {
@@ -34,7 +35,6 @@ class App extends Component {
         
         return (
             <div id='site'>
-                
                     <header id="header">
                         <Link to='/'>
                     <img id="headerLogo" src={"/static/frontend/Op.LogoV1transparent.png"}></img>
@@ -49,7 +49,6 @@ class App extends Component {
                         <Route exact path={"/login/"} component={login_container}/>
                         <Route exact path={"/signup/"} component={signup_container}/>
                         <Route path={'/ops/'} component={Grid}/>
-                       
                     </Switch>
                 </main>
             </div>
