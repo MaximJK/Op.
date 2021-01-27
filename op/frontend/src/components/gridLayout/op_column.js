@@ -76,7 +76,7 @@ class OpColumn extends React.Component {
         else {selected = false};
 
       return(
-        <div className='opColumn'>
+        <div>
         <OpsLi
         key={op.id}
         id={op.id}
@@ -98,7 +98,7 @@ class OpColumn extends React.Component {
     
     return (
       
-      <div className="" >
+      <div className='opColumn' >
         <div>
         <div id='OpsModal' style={this.props.modal ? {} :  {display: 'none'}} onClick={e => this.modalClick(e)}>
           </div>
