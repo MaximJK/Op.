@@ -29,7 +29,7 @@ class OpColumn extends React.Component {
         medium: op.medium,
         description: op.description,
         title: op.title,
-        type: 'edit'
+        type: 'edit',
       }
     )
     this.props.modalOn();
@@ -117,7 +117,7 @@ class OpColumn extends React.Component {
         your Ops:
         </div>
         <div>
-          <ul>
+          <ul className="opsUl">
           {ops}
           </ul>
         </div>

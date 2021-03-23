@@ -38,7 +38,7 @@ class DraftColumn extends React.Component {
         }
         return (
             <div className='draftColumn'>
-                <ul>
+                <ul className="draftUl">
                     {drafts}
                 </ul>
             </div>
