@@ -7,7 +7,7 @@ class Op(models.Model):
     authors = models.ForeignKey(
         user_models.CustomUser, 
         on_delete=models.CASCADE,
-        null=True, blank=True, default=None)
+        null=False, blank=True, default=None)
     medium = models.TextField(max_length=30)
     title = models.TextField(max_length=30)
     description = models.TextField(max_length=120)

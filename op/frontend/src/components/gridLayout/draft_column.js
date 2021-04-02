@@ -10,7 +10,7 @@ class DraftColumn extends React.Component {
         }
     }
     componentDidMount(){
-        if(this.props.selected != 'none')
+        if(this.props.selected != 'none' )
         this.props.fetchDrafts(this.props.selected)
     }
     render(){
