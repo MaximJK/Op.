@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     let opId = Number(ownProps.match.params.opid)
    
     return {
-        selected: opId,
+        selected: state.selected,
         drafts: state.drafts
     }
 }

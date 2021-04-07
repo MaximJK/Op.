@@ -7,7 +7,6 @@ class OpsForm extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.op;
-        
     }
     defineAction(){
         if (this.props.type.type === 'create') {
@@ -30,6 +29,7 @@ class OpsForm extends React.Component {
     };
 
     render () {
+        
         console.log(this.state)
         return (
             <div className='modalBox' >

@@ -12,7 +12,6 @@ export const fetchOps = id => dispatch => (
     })
 );
 
-
 export const fetchOp = id => dispatch => (
     axiosInstance.get('/ops/', {
         id: id
@@ -26,13 +25,15 @@ export const fetchOp = id => dispatch => (
 );
 
 export const createOp = data => dispatch => (
+   
     axiosInstance.post('/ops/', {
-        authors: data.id,
+        authors: data.authors,  
         medium: data.medium,
         title: data.title,
         description: data.description,
         is_public: 'False'
     })
+    
     .then(response => {
         return dispatch({
         type: CREATE_OP,
