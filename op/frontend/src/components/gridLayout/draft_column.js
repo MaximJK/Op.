@@ -34,7 +34,7 @@ class DraftColumn extends React.Component {
                             </li>
                 )
             })
-
+        drafts.unshift( <li> select a draft: </li>); 
         }
         return (
             <div className='draftColumn'>
