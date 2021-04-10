@@ -11,14 +11,16 @@ const mapStateToProps = (state, ownProps) => {
 
     return {
         selected: state.selected,
-        drafts: state.drafts
-    }
-}
+        drafts: state.drafts,
+        modal: modal,
+    };
+};
 const mapDispatchToProps = (dispatch) => {
     
     return {
-    
-}}
+        modalOn:() => dispatch(modalOn()),
+        modalOff:() => dispatch(modalOff()),
+}};
 
 export default connect(
     mapStateToProps,

@@ -4,8 +4,9 @@ width: fit-content;
 height: fit-content;
 padding: 2vh;
 margin: 15% auto;
-position: relative;
+position: absolute;
 z-index: 3;
+left: 50%;
 }
 
 #OpsModal{
