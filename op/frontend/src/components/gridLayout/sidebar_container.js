@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
-import DraftColumn from './draft_column';
-import {fetchDrafts} from '../../actions/drafts';
+import {createDraft} from '../../actions/drafts';
 import {modalOn, modalOff} from '../../actions/modal';
-import {selectOp} from '../../actions/select_op';
 import Sidebar from './sidebar';
 
 
@@ -12,14 +10,15 @@ const mapStateToProps = (state, ownProps) => {
     return {
         selected: state.selected,
         drafts: state.drafts,
-        modal: modal,
+        modal: state.modal,
     };
 };
 const mapDispatchToProps = (dispatch) => {
     
     return {
-        modalOn:() => dispatch(modalOn()),
-        modalOff:() => dispatch(modalOff()),
+        // modalOn:() => dispatch(modalOn()),
+        // modalOff:() => dispatch(modalOff()),
+        createDraft:() => dispatch(createDraft())
 }};
 
 export default connect(

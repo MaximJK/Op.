@@ -9,13 +9,7 @@ class DraftForm extends React.Component {
     }
 
    
-    defineAction(){
-        if (this.props.type === 'create') {
-            return this.props.createDraft
-        } else {
-            return this.props.updateDraft  
-        };
-    }
+    
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value });
@@ -29,7 +23,7 @@ class DraftForm extends React.Component {
     };
 
     render () {
-        
+        console.log('draft modal')
         return (
             <div className="authDiv">
                 <form onSubmit={this.handleSubmit}>
@@ -39,9 +33,9 @@ class DraftForm extends React.Component {
                    <div>
                         <textarea
                             className=""
-                            value={this.state.body}
-                            rows='12'
-                            onChange={this.update('body')}
+                            value=''
+                            rows= '6'
+                            onChange=''
                          />
                     </div>
 
@@ -50,13 +44,13 @@ class DraftForm extends React.Component {
                     <br></br>
                         <textarea
                             className=""
-                            value={this.state.notes}
+                            value=''
                             rows='6'
-                            onChange={this.update('notes')}
+                            onChange=''
                          />
                     </div>
                     
-                    <input className="submit"  type="submit" value={this.props.type.type}/>
+                    <input className="submit"  type="submit" value= 'create'/>
                 </form>
             </div>
         );

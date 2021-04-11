@@ -1,25 +1,31 @@
 import React from 'react';
+import DraftModal from '../drafts/draftModal';
 
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: this.props.modal
+          modal: false
       };
       }
 
       modalClick(event) {
         event.preventDefault();
         if (event.currentTarget.id === 'OpsModal') {
-          this.props.modalOff();
+          this.setState({
+            modal:false
+          })
         };
       };
 
       createDraft() {
-        this.props.modalOn();
+        this.setState({
+          modal:true
+        })
       }
 
     render(){
+      console.log(this.state);
         let drafts = <div></div>;
         if (this.props.drafts != 'empty' && this.props.selected != 'none') {
                 drafts = Object.values(this.props.drafts[this.props.selected])
@@ -39,23 +45,17 @@ class Sidebar extends React.Component {
         }
 
         return (
-            <div className='sidebar'>
-                 <div>
-        <div id='DraftModal' style={this.props.modal ? {} :  {display: 'none'}} onClick={e => this.modalClick(e)}>
+          <div className='sidebar'>
+            <div>
+              <div id='OpsModal' style={this.state.modal ? {} :  {display: 'none'}} onClick={e => this.modalClick(e)}>
+              </div>
+                {this.state.modal && <DraftModal
+            
+                />}
+            </div >
+                  {createDraft }
+                  {drafts}
           </div>
-            {this.props.modal && <DraftForm
-            key={this.state.title}
-            id={this.state.id}
-            authors= {this.state.authors}
-            medium= {this.state.medium}
-            description= {this.state.description}
-            title= {this.state.title}
-            type= {this.state.type}
-            />}
-          </div >
-                {createDraft }
-                {drafts}
-            </div>
         )
     }
 }
